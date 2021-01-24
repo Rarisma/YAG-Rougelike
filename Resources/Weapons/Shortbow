@@ -1,0 +1,11 @@
+[Shortbow]
+#Minimum attack value
+100
+#Maximum Attack Value
+300
+#Minimum Hit Percent
+1
+#Maximum Hit Percent
+25
+#Critical Hit Max Percent
+75
