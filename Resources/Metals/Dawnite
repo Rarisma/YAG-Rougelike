@@ -10,9 +10,13 @@ True
 5
 #Able to make weapons?
 True
+#Able to make armor?
+True
 #Melee Attack Value
 15
 #Ranged Attack Value
 20
 #Thowables Attack Value
 15
+#Armor Value
+13
