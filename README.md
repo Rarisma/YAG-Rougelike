@@ -21,6 +21,6 @@ so this is a remaster of Rarisma/A-Generic-Roguealike-Game
 I'm hoping to have a working alpha available on Windows 10 (UWP) and android (APK) by the end of Febuary
 I do not have a date yet for a possible 1.0 release yet
 
-## Will the be on Microsoft Store/Google Play/F-Droid/ect.
+## Will this be on Microsoft Store/Google Play/F-Droid/ect.
 I am still looking into this as I will have the prerequisite files (APPX/APK) but I need to research into submitting and publishing these,
 it seems that my main issue is obtaining a certificate.
