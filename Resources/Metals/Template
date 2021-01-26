@@ -11,6 +11,7 @@ Set to 1 or more (Ignore if forgable is false)
 #Able to make weapons?
 True/False?
 #Able make armor
+True/False
 #Melee Attack Value
 Should be less than 20
 #Ranged Attack Value
@@ -18,3 +19,4 @@ Should be less than 20
 #Thowables Attack Value
 Should be less than 20
 #Armor Value
+Should be less than 20
