@@ -1,0 +1,14 @@
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\bin\Debug\netstandard2.0\GenericRoguelike.deps.json
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\bin\Debug\netstandard2.0\GenericRoguelike.dll
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\bin\Debug\netstandard2.0\ref\GenericRoguelike.dll
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\bin\Debug\netstandard2.0\GenericRoguelike.pdb
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\obj\Debug\netstandard2.0\GenericRoguelike.csprojAssemblyReference.cache
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\obj\Debug\netstandard2.0\GenericRoguelike.AssemblyInfoInputs.cache
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\obj\Debug\netstandard2.0\GenericRoguelike.AssemblyInfo.cs
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\obj\Debug\netstandard2.0\GenericRoguelike.csproj.CoreCompileInputs.cache
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\obj\Debug\netstandard2.0\GenericRoguelike.dll
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\obj\Debug\netstandard2.0\ref\GenericRoguelike.dll
+E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike\obj\Debug\netstandard2.0\GenericRoguelike.pdb

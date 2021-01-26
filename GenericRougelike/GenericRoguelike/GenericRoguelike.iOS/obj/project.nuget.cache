@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "5CfjDgObSwXlOecO9IeYlwgza3nJX1z35GbpP5zOp7UaKrq3HFacFqh4DZmfaXO7+xZIHAOnUsvdLrv/1pNK8A==",
+  "success": true,
+  "projectFilePath": "E:\\Repositories\\GenericRougelike\\Yet-Another-Generic-Rougelike-Game\\GenericRougelike\\GenericRoguelike\\GenericRoguelike.iOS\\GenericRoguelike.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+  ],
+  "logs": []
+}
