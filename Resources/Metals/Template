@@ -1,0 +1,18 @@
+#Findable in caves?
+True/False
+#Abundance
+This should probably be less than 10
+#Rarity
+0.000 - 1
+#Forgable?
+True/False
+#Ammount need to make bar?
+Set to 1 or more (Ignore if forgable is false)
+#Able to make weapons?
+True/False?
+#Melee Attack Value
+Should be less than 20
+#Ranged Attack Value
+Should be less than 20
+#Thowables Attack Value
+Should be less than 20
