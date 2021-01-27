@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using System.IO;
 using Xamarin.Essentials;
 using System.Net;
+using System.IO.Compression;
 
 namespace GenericRoguelike
 {
@@ -36,9 +37,10 @@ namespace GenericRoguelike
 
             using (var client = new WebClient())
             {
-                client.DownloadFile("https://github.com/Rarisma/Yet-Another-Generic-Rougelike-Game/tree/main/Resources/", FileSystem.AppDataDirectory + "//Rarisma//");
+                client.DownloadFile("https://raw.githubusercontent.com/Rarisma/Yet-Another-Generic-Rougelike-Game/main/Resources/Resources.zip", FileSystem.AppDataDirectory + "//Resouces.zip");
             }
-            PlayButton.Text = FileSystem.AppDataDirectory + "//Rarisma//";
+
+            ZipFile.ExtractToDirectory(FileSystem.AppDataDirectory + "//Resouces.zip", FileSystem.AppDataDirectory + "//Data//Resources//");
 
 
         }
