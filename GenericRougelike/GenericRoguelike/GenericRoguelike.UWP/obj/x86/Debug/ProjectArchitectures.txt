@@ -1,1 +1,0 @@
-E:\Repositories\GenericRougelike\Yet-Another-Generic-Rougelike-Game\GenericRougelike\GenericRoguelike\GenericRoguelike.UWP\GenericRoguelike.UWP.csproj;x86
