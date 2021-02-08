@@ -30,13 +30,13 @@
     <AppXManifest Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-02-08T10:11:48.196</Modified>
+      <Modified>2021-02-08T22:54:13.955</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Debug\YetAnotherGenericRougelikeGame.UWP.exe">
       <PackagePath>entrypoint\YetAnotherGenericRougelikeGame.UWP.exe</PackagePath>
-      <Modified>2021-02-08T10:11:44.043</Modified>
+      <Modified>2021-02-08T22:54:10.893</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jake\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.11\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -68,7 +68,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\bin\Debug\netstandard2.0\YetAnotherGenericRougelikeGame.dll">
       <PackagePath>YetAnotherGenericRougelikeGame.dll</PackagePath>
-      <Modified>2021-02-08T11:00:37.062</Modified>
+      <Modified>2021-02-08T22:55:58.137</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jake\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -227,11 +227,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-02-08T10:11:43.933</Modified>
+      <Modified>2021-02-08T22:54:10.749</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-02-08T10:11:43.933</Modified>
+      <Modified>2021-02-08T22:54:10.749</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -251,7 +251,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Debug\Core\YetAnotherGenericRougelikeGame.UWP.exe">
       <PackagePath>YetAnotherGenericRougelikeGame.UWP.exe</PackagePath>
-      <Modified>2021-02-08T10:11:48.188</Modified>
+      <Modified>2021-02-08T22:54:13.910</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -18,13 +18,14 @@ namespace YetAnotherGenericRougelikeGame
 
         async void Play(object sender, EventArgs e)
         {
+            await Navigation.PushModalAsync(new GameView());
             string UpdaterStatus = "Initalised";
             try// These seem to fail on UWP (Win10/Xbox)
             {
                 await Permissions.CheckStatusAsync<Permissions.StorageRead>();
                 await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
             }
-            catch {Task.Delay(0);}
+            catch {await Task.Delay(0);}
 
             PlayButton.Text = "Attempting to update...";
             await Task.Delay(1); //Delays task to make sure the play button updates

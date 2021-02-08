@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>ec0cc741-fd3e-485c-81be-68815c480690</PackageIdentityName>
     <PackageIdentityPublisher>CN=8ca25944-06c6-481c-8d37-fe8850f52342</PackageIdentityPublisher>
-    <IntermediateOutputPath>E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\obj\x86\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\obj\x86\Release\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\AppX</LayoutDir>
+    <LayoutDir>E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\AppX</LayoutDir>
     <RegisteredManifestChecksum>FA6671DD7CA213939D5929376C430CBA51BAB7FCE465DD83C94FF0C0E7676F48</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>83eeb9f3-040b-44cd-83c4-ca4a5902529b_0.1.0.0_x86__dfvsrqnbkzq0r</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>83eeb9f3-040b-44cd-83c4-ca4a5902529b_dfvsrqnbkzq0r!App</RegisteredUserModeAppID>
@@ -27,175 +27,175 @@
     <RegisteredVersion>0.1.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\AppxManifest.xml">
+    <AppXManifest Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-02-05T16:44:54.807</Modified>
+      <Modified>2021-02-08T23:12:24.689</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.739</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.742</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.745</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SmallTile.scale-100.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.747</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SmallTile.scale-200.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.812</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SmallTile.scale-400.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.814</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.816</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.818</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.824</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.884</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.886</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.888</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.890</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.892</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.958</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.961</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.962</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.964</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:50.966</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:51.033</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:51.035</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:51.038</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\StoreLogo.scale-200.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:51.040</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\StoreLogo.scale-400.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:51.106</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:51.107</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:51.109</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-02-05T15:20:51.112</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\clrcompression.dll">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
       <Modified>2020-11-20T09:09:12.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Microsoft.Graphics.Canvas.dll">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
       <Modified>2016-11-30T02:58:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Microsoft.Graphics.Canvas.winmd">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
       <Modified>2016-11-30T02:58:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\resources.pri">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-02-05T16:42:58.920</Modified>
+      <Modified>2021-02-08T23:10:35.659</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\YetAnotherGenericRougelikeGame.UWP.dll">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\YetAnotherGenericRougelikeGame.UWP.dll">
       <PackagePath>YetAnotherGenericRougelikeGame.UWP.dll</PackagePath>
-      <Modified>2021-02-05T16:44:52.489</Modified>
+      <Modified>2021-02-08T23:12:21.755</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\YetAnotherGenericRougelikeGame.UWP.exe">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\YetAnotherGenericRougelikeGame.UWP.exe">
       <PackagePath>YetAnotherGenericRougelikeGame.UWP.exe</PackagePath>
-      <Modified>2021-02-05T16:44:54.736</Modified>
+      <Modified>2021-02-08T23:12:24.584</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Repositories\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\YetAnotherGenericRougelikeGame.UWP.pdb">
+    <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.UWP\bin\x86\Release\ilc\YetAnotherGenericRougelikeGame.UWP.pdb">
       <PackagePath>YetAnotherGenericRougelikeGame.UWP.pdb</PackagePath>
-      <Modified>2021-02-05T16:44:54.723</Modified>
+      <Modified>2021-02-08T23:12:24.568</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

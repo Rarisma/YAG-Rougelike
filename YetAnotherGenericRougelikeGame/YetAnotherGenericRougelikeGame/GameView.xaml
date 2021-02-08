@@ -3,22 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YetAnotherGenericRougelikeGame.GameView">
     <ContentPage.Content>
-        <Grid>
+        <Grid BackgroundColor="#000000">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200"/>
-                <RowDefinition Height="450"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Frame BackgroundColor="Red" HeightRequest="100">
+            <Frame BackgroundColor="Red" HeightRequest="100" Grid.Row="0">
                 <Label Text="Character Info here" TextColor="Snow" FontSize="50"/>
             </Frame>
 
-            <Frame BackgroundColor="CadetBlue" Grid.Row="1" >
-                <Label Text="Map/Game text here" TextColor="Snow" FontSize="50"/>
-            </Frame>
-            
-            <Frame BackgroundColor="MediumPurple" Grid.Row="2" >
+            <Label x:Name="TXTLocation" Text="Location Text" TextColor="#F0FFFF" FontSize="20" Grid.Row="1" x:FieldModifier="public"/>
+            <Label x:Name="TXTRes0" Text="Resource Text0" TextColor="#F0FFFF" FontSize="20" Grid.Row="2"/>
+            <Label x:Name="TXTRes1" Text="Resource Text1" TextColor="#F0FFFF" FontSize="20" Grid.Row="3"/>
+            <Label x:Name="TXTRes2" Text="Resource Text2" TextColor="#F0FFFF" FontSize="20" Grid.Row="4"/>
+            <Label x:Name="TXTRes3" Text="Resource Text3" TextColor="#F0FFFF" FontSize="20" Grid.Row="5"/>
+            <Label x:Name="TXTEnemy" Text="Enemy Text" TextColor="#F0FFFF " FontSize="20" Grid.Row="6"/>
+
+
+            <Frame BackgroundColor="MediumPurple" Grid.Row="7" >
                 <Label Text="Options" TextColor="Snow" FontSize="50"/>
             </Frame>
         </Grid>
