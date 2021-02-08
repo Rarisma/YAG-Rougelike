@@ -987,11 +987,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.iOS\\YetAnotherGenericRougelikeGame.iOS.csproj",
+      "projectUniqueName": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.iOS\\YetAnotherGenericRougelikeGame.iOS.csproj",
       "projectName": "YetAnotherGenericRougelikeGame.iOS",
-      "projectPath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.iOS\\YetAnotherGenericRougelikeGame.iOS.csproj",
+      "projectPath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.iOS\\YetAnotherGenericRougelikeGame.iOS.csproj",
       "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-      "outputPath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.iOS\\obj\\",
+      "outputPath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1012,8 +1012,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj": {
-              "projectPath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj"
+            "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj": {
+              "projectPath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj"
             }
           }
         }

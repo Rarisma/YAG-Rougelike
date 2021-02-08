@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YetAnotherGenericRougelikeGame.GameView">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Frame BackgroundColor="Red" HeightRequest="100">
+                <Label Text="Character Info here" TextColor="Snow" FontSize="50"/>
+            </Frame>
+
+            <Frame BackgroundColor="CadetBlue" Grid.Row="1" >
+                <Label Text="Map/Game text here" TextColor="Snow" FontSize="50"/>
+            </Frame>
+            
+            <Frame BackgroundColor="MediumPurple" Grid.Row="2" >
+                <Label Text="Options" TextColor="Snow" FontSize="50"/>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

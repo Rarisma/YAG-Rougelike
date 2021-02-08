@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k3P3zq7pHMa9Zms4ThM4qUeM3szAu6wlSmRdfUHC7EGtKMJ+RSmnD6PUJgnUoX/9nzxapz3mZfjbPsGiECxOgw==",
+  "dgSpecHash": "E5h4LIQ1jepG1Blb90SbqnxdQwh85DoIFy4eqx49leIlU4dnI5Zo3fVYWvORG73nR83MZtoz+yYe/6qHdYXmZg==",
   "success": true,
-  "projectFilePath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.UWP\\YetAnotherGenericRougelikeGame.UWP.csproj",
+  "projectFilePath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.UWP\\YetAnotherGenericRougelikeGame.UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jake\\.nuget\\packages\\microsoft.net.native.compiler\\2.2.9-rel-29512-01\\microsoft.net.native.compiler.2.2.9-rel-29512-01.nupkg.sha512",
     "C:\\Users\\Jake\\.nuget\\packages\\microsoft.net.uwpcoreruntimesdk\\2.2.11\\microsoft.net.uwpcoreruntimesdk.2.2.11.nupkg.sha512",

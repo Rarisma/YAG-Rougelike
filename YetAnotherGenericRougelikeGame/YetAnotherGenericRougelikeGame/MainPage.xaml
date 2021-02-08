@@ -10,7 +10,7 @@
             <Label Text="Version 0.1.0 Xamarin Alpha&#x0a;           Made by Rarisma" FontSize="Small" TextColor="AliceBlue" HorizontalOptions="Center"/>
             <BoxView Color="#444" HeightRequest="100"/>
 
-            <Button x:Name="PlayButton" Text="Play" Margin="20" Clicked="Initalise"/>
+            <Button x:Name="PlayButton" Text="Play" Margin="20" Clicked="Play"/>
             <Button Text="Settings" Margin="20" IsEnabled="False"/>
 
         </StackLayout>

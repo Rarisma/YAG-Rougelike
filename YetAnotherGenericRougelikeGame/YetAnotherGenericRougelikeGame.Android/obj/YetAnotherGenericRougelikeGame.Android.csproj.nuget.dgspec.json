@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\YetAnotherGenericRougelikeGame.Android.csproj": {}
+    "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\YetAnotherGenericRougelikeGame.Android.csproj": {}
   },
   "projects": {
-    "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\YetAnotherGenericRougelikeGame.Android.csproj": {
+    "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\YetAnotherGenericRougelikeGame.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\YetAnotherGenericRougelikeGame.Android.csproj",
+        "projectUniqueName": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\YetAnotherGenericRougelikeGame.Android.csproj",
         "projectName": "YetAnotherGenericRougelikeGame.Android",
-        "projectPath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\YetAnotherGenericRougelikeGame.Android.csproj",
+        "projectPath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\YetAnotherGenericRougelikeGame.Android.csproj",
         "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-        "outputPath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\obj\\",
+        "outputPath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj": {
-                "projectPath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj"
+              "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj": {
+                "projectPath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj"
               }
             }
           }
@@ -54,14 +54,14 @@
         }
       }
     },
-    "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj": {
+    "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj",
+        "projectUniqueName": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj",
         "projectName": "YetAnotherGenericRougelikeGame",
-        "projectPath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj",
+        "projectPath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj",
         "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-        "outputPath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\obj\\",
+        "outputPath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J5CiZV9hOOw1mf1a6z52Pvhz5rXnIY4NixcJCtqKaxbOCoXcPogE3cpuOZ8g6zeUB22T+ZelvkAuYp0wMObhew==",
+  "dgSpecHash": "7Vx3/TkTKQ6bCm0RmlYPY0eMss87Qm+EuuWO8q2rooM9j2GqQdWTQLModdTS3/Qsadp0cflV5d4sAgqjM70j6g==",
   "success": true,
-  "projectFilePath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj",
+  "projectFilePath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jake\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Jake\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

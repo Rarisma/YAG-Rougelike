@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QJsm7Es9NIerxW+TnX2eYjGzQHMAgOIS9k81RpGGOgHiWQvxIxAw+3+Y+GD1eLu2mI+aLv1+n/6ryDOOxi/0MQ==",
+  "dgSpecHash": "wSHKgQ9wjwTD6iU6E47217TsN3xmxEHft1SRp1ZLh5QnT7MOki0Im46wBWBFXrwUPV81l8o62EppFY6+ooqIQg==",
   "success": true,
-  "projectFilePath": "E:\\Repositories\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\YetAnotherGenericRougelikeGame.Android.csproj",
+  "projectFilePath": "E:\\Repositories\\YAG Rougelike\\YetAnotherGenericRougelikeGame\\YetAnotherGenericRougelikeGame.Android\\YetAnotherGenericRougelikeGame.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",
