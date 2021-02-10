@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YetAnotherGenericRougelikeGame.GameView">
     <ContentPage.Content>
-        <Grid BackgroundColor="#000000">
+        <Grid BackgroundColor="#121212">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200"/>
                 <RowDefinition Height="30"/>
@@ -15,21 +15,38 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Frame BackgroundColor="Red" HeightRequest="100" Grid.Row="0">
-                <Label Text="Character Info here" TextColor="Snow" FontSize="50"/>
-            </Frame>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="TXTCoords" Text="Coordinates:&#x0d;&#x0a;X:????&#x0d;&#x0a;Y:????" TextColor="#F0FFFF" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="TXTXP" TextColor="#F0FFFF"/>
 
-            <Label x:Name="TXTLocation" Text="Location Text" TextColor="#F0FFFF" FontSize="20" Grid.Row="1" x:FieldModifier="public"/>
-            <Label x:Name="TXTRes0" Text="Resource Text0" TextColor="#F0FFFF" FontSize="20" Grid.Row="2"/>
-            <Label x:Name="TXTRes1" Text="Resource Text1" TextColor="#F0FFFF" FontSize="20" Grid.Row="3"/>
-            <Label x:Name="TXTRes2" Text="Resource Text2" TextColor="#F0FFFF" FontSize="20" Grid.Row="4"/>
-            <Label x:Name="TXTRes3" Text="Resource Text3" TextColor="#F0FFFF" FontSize="20" Grid.Row="5"/>
-            <Label x:Name="TXTEnemy" Text="Enemy Text" TextColor="#F0FFFF " FontSize="20" Grid.Row="6"/>
+            </Grid>
 
+            <Label x:Name="TXTLocation" Text="Location Text"  TextColor="#F0FFFF" FontSize="20" Grid.Row="1" HorizontalOptions="Center"/>
+            <Label x:Name="TXTRes0"     Text="Resource Text0" TextColor="#F0FFFF" FontSize="20" Grid.Row="2" HorizontalOptions="Center"/>
+            <Label x:Name="TXTRes1"     Text="Resource Text1" TextColor="#F0FFFF" FontSize="20" Grid.Row="3" HorizontalOptions="Center"/>
+            <Label x:Name="TXTRes2"     Text="Resource Text2" TextColor="#F0FFFF" FontSize="20" Grid.Row="4" HorizontalOptions="Center"/>
+            <Label x:Name="TXTRes3"     Text="Resource Text3" TextColor="#F0FFFF" FontSize="20" Grid.Row="5" HorizontalOptions="Center"/>
+            <Label x:Name="TXTEnemy"    Text="Enemy Text"     TextColor="#F0FFFF" FontSize="20" Grid.Row="6" HorizontalOptions="Center"/>
 
-            <Frame BackgroundColor="MediumPurple" Grid.Row="7" >
-                <Label Text="Options" TextColor="Snow" FontSize="50"/>
-            </Frame>
+            <Grid Grid.Row="7">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="North" Text="Move North"  Grid.Row="1"  HorizontalOptions="Center" Clicked="Move"/>
+                <Button x:Name="West"  Text="Move West"   Grid.Row="2"  HorizontalOptions="Start"  Clicked="Move"/>
+                <Button x:Name="East"  Text="Move East"   Grid.Row="2"  HorizontalOptions="End"    Clicked="Move"/>
+                <Button x:Name="South" Text="Move South"  Grid.Row="3"  HorizontalOptions="Center" Clicked="Move"/>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YetAnotherGenericRougelikeG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YetAnotherGenericRougelikeGame.iOS", "YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.iOS\YetAnotherGenericRougelikeGame.iOS.csproj", "{5837F92E-5477-4D19-A693-54D0C4851258}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YetAnotherGenericRougelikeGame", "YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.csproj", "{B71D291D-9E9E-46E2-B4D9-D0DD35F80586}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YetAnotherGenericRougelikeGame", "YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame\YetAnotherGenericRougelikeGame.csproj", "{B71D291D-9E9E-46E2-B4D9-D0DD35F80586}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,7 +19,6 @@ namespace YetAnotherGenericRougelikeGame
         async void Play(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new GameView());
-            string UpdaterStatus = "Initalised";
             try// These seem to fail on UWP (Win10/Xbox)
             {
                 await Permissions.CheckStatusAsync<Permissions.StorageRead>();
@@ -29,19 +28,17 @@ namespace YetAnotherGenericRougelikeGame
 
             PlayButton.Text = "Attempting to update...";
             await Task.Delay(1); //Delays task to make sure the play button updates
-            UpdaterStatus = "Requested Permissions";
             using (var client = new WebClient()) { client.DownloadFile("https://github.com/Rarisma/YAG-Rougelike/raw/main/Resources/Resources.zip", FileSystem.AppDataDirectory + "//Resouces.zip"); }
 
-            UpdaterStatus = "Attempting to download file";
             try { Directory.Delete(FileSystem.AppDataDirectory + "//Data//Resources//", true); } //Deletes Resources folder and any subfolders
-            catch { UpdaterStatus = "Failed to delete //Resources// (Probably doesn't exist)"; } // Does nothing, just prevents crash
+            catch { await Task.Delay(1);} // Does nothing, just prevents crash
 
             try { ZipFile.ExtractToDirectory(FileSystem.AppDataDirectory + "//Resouces.zip", FileSystem.AppDataDirectory + "//Data//Resources//"); }
-            catch { UpdaterStatus = "Zip Extraction Failed."; }
+            catch { await Task.Delay(1); }
 
             await Navigation.PushModalAsync(new GameView());
             PlayButton.Text = "Update complete!";
-            await Task.Delay(1);
+            await Task.Delay(1000);
             PlayButton.Text = "Play"; 
 
         }
