@@ -112,7 +112,7 @@ namespace YetAnotherGenericRougelikeGame
             return output;
         }
 
-        public static string[] ResouceGenerate()
+        public static string[] ResouceGenerate() //This generates a single resource ResourceDisplay() creates a full set of resources.
         {
             /* Heres how the resource gen works
             Random Value   Name               ID
@@ -137,37 +137,37 @@ namespace YetAnotherGenericRougelikeGame
             {
                 output[0] = "0";
                 output[1] = Convert.ToString(rnd.Next(0, Generate.BushResources.Count()));
-                output[2] = Generate.BushResources[Convert.ToInt32(output[1])];
+                output[2] = "There is a " + Generate.BushResources[Convert.ToInt32(output[1])];
             }
             else if (ResourceDecider >= 16 && ResourceDecider <= 30)
             {
                 output[0] = "1";
                 output[1] = Convert.ToString(rnd.Next(0, Generate.FloorPlantResources.Count()));
-                output[2] = Generate.FloorPlantResources[Convert.ToInt32(output[1])];
+                output[2] = "There is a " + Generate.FloorPlantResources[Convert.ToInt32(output[1])];
             }
             else if (ResourceDecider >= 31 && ResourceDecider <= 40)
             {
                 output[0] = "2";
                 output[1] = Convert.ToString(rnd.Next(0, Generate.WaterPlantResources.Count()));
-                output[2] = Generate.WaterPlantResources[Convert.ToInt32(output[1])];
+                output[2] = "There is a " + Generate.WaterPlantResources[Convert.ToInt32(output[1])];
             }
             else if (ResourceDecider >= 41 && ResourceDecider <= 60)
             {
                 output[0] = "3";
                 output[1] = Convert.ToString(rnd.Next(0, Generate.FruitTreeResources.Count()));
-                output[2] = Generate.FruitTreeResources[Convert.ToInt32(output[1])];
+                output[2] = "There is a " + Generate.FruitTreeResources[Convert.ToInt32(output[1])] + " tree";
             }
             else if (ResourceDecider >= 61 && ResourceDecider <= 96)
             {
                 output[0] = "4";
                 output[1] = Convert.ToString(rnd.Next(0, Generate.TreeResources.Count()));
-                output[2] = Generate.TreeResources[Convert.ToInt32(output[1])];
+                output[2] = "There is a " + Generate.TreeResources[Convert.ToInt32(output[1])] + " tree";
             }
             else if (ResourceDecider >= 97 && ResourceDecider <= 100)
             {
                 output[0] = "4";
                 output[1] = Convert.ToString(rnd.Next(0, Generate.TreeResources.Count()));
-                output[2] = Generate.TreeResources[Convert.ToInt32(output[1])];
+                output[2] = "There is a " + Generate.TreeResources[Convert.ToInt32(output[1])] + " tree";
             }
             return output;
         }

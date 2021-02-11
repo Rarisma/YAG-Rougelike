@@ -17,22 +17,27 @@
 
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="10"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
                 <Label x:Name="TXTCoords" Text="Coordinates:&#x0d;&#x0a;X:????&#x0d;&#x0a;Y:????" TextColor="#F0FFFF" Grid.Row="0" Grid.Column="0"/>
-                <Label x:Name="TXTXP" TextColor="#F0FFFF"/>
+                <Label Text="XP" Grid.Row="0" Grid.Column="1" TextColor="#F0FFFF" HorizontalOptions="Center"/>
+                <ProgressBar IsVisible="True" x:Name="XPBAR" Grid.Row="1" Grid.Column="1"/>
 
             </Grid>
 
-            <Label x:Name="TXTLocation" Text="Location Text"  TextColor="#F0FFFF" FontSize="20" Grid.Row="1" HorizontalOptions="Center"/>
-            <Label x:Name="TXTRes0"     Text="Resource Text0" TextColor="#F0FFFF" FontSize="20" Grid.Row="2" HorizontalOptions="Center"/>
-            <Label x:Name="TXTRes1"     Text="Resource Text1" TextColor="#F0FFFF" FontSize="20" Grid.Row="3" HorizontalOptions="Center"/>
-            <Label x:Name="TXTRes2"     Text="Resource Text2" TextColor="#F0FFFF" FontSize="20" Grid.Row="4" HorizontalOptions="Center"/>
-            <Label x:Name="TXTRes3"     Text="Resource Text3" TextColor="#F0FFFF" FontSize="20" Grid.Row="5" HorizontalOptions="Center"/>
-            <Label x:Name="TXTEnemy"    Text="Enemy Text"     TextColor="#F0FFFF" FontSize="20" Grid.Row="6" HorizontalOptions="Center"/>
+            <Label x:Name="TXTLocation"  Text="Location Text"  TextColor="#F0FFFF" FontSize="20" Grid.Row="1" HorizontalOptions="Center"/>
+            <Label x:Name="TXTResources0" Text="Resource Text0"  TextColor="#F0FFFF" FontSize="20" Grid.Row="2" HorizontalOptions="Center"/>
+            <Label x:Name="TXTResources1" Text="Resource Text1"  TextColor="#F0FFFF" FontSize="20" Grid.Row="3" HorizontalOptions="Center"/>
+            <Label x:Name="TXTResources2" Text="Resource Text2"  TextColor="#F0FFFF" FontSize="20" Grid.Row="4" HorizontalOptions="Center"/>
+            <Label x:Name="TXTResources3" Text="Resource Text3"  TextColor="#F0FFFF" FontSize="20" Grid.Row="5" HorizontalOptions="Center"/>
+            <Label x:Name="TXTEnemy"     Text="Enemy Text"     TextColor="#F0FFFF" FontSize="20" Grid.Row="6" HorizontalOptions="Center"/>
 
             <Grid Grid.Row="7">
                 <Grid.RowDefinitions>
