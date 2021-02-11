@@ -19,16 +19,24 @@ namespace YetAnotherGenericRougelikeGame
         public static List<string> ForestLocations = new List<string>();
         public static List<string> CaveLocations = new List<string>();
         public static List<string> MountainLocations = new List<string>();
-        
+
         public static List<string> BushResources = new List<string>();
         public static List<string> FloorPlantResources = new List<string>();
         public static List<string> WaterPlantResources = new List<string>();
-        
+
         public static List<string> FruitTreeResources = new List<string>();
         public static List<string> TreeResources = new List<string>();
         public static List<string> RareTreeResources = new List<string>();
 
         public static List<string> PassiveCreatures = new List<string>();
+        public static List<string> LesserPrefixHostileCreatures = new List<string>();
+        public static List<string> LesserNameHostileCreatures = new List<string>();
+        public static List<string> PrefixHostileCreatures = new List<string>();
+        public static List<string> NameHostileCreatures = new List<string>();
+        public static List<string> SuffixHostileCreatures = new List<string>();
+        public static List<string> GreaterPrefixHostileCreatures = new List<string>();
+        public static List<string> GreaterNameHostileCreatures = new List<string>();
+        public static List<string> GreaterSuffixHostileCreatures = new List<string>();
 
         public static void ClearResources() //Should be called before using ReloadResources()
         {
@@ -45,6 +53,14 @@ namespace YetAnotherGenericRougelikeGame
             TreeResources.Clear();
             RareTreeResources.Clear();
             PassiveCreatures.Clear();
+            LesserPrefixHostileCreatures.Clear();
+            LesserNameHostileCreatures.Clear();
+            PrefixHostileCreatures.Clear();
+            NameHostileCreatures.Clear();
+            SuffixHostileCreatures.Clear();
+            GreaterPrefixHostileCreatures.Clear();
+            GreaterNameHostileCreatures.Clear();
+            GreaterSuffixHostileCreatures.Clear();
         }
 
         public static void ReloadResources() //Calling this function will reload all resources
@@ -53,16 +69,24 @@ namespace YetAnotherGenericRougelikeGame
             Generate.ForestLocations.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Locations/Regular/Forest"));
             Generate.CaveLocations.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Locations/Regular/Caves"));
             Generate.MountainLocations.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Locations/Regular/Mountain"));
-            
+
             Generate.BushResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Plants/Bushes"));
             Generate.FloorPlantResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Plants/Floor"));
             Generate.WaterPlantResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Plants/Waterplants"));
-            
+
             Generate.FruitTreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Trees/Fruit"));
             Generate.TreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Trees/Regular"));
             Generate.RareTreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Trees/Rare"));
 
-            Generate.RareTreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Passive/Land"));
+            Generate.PassiveCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Passive/Land/Names"));
+            Generate.LesserPrefixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Lesser/Prefix"));
+            Generate.LesserNameHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Lesser/Enemy"));
+            Generate.PrefixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Normal/Prefix"));
+            Generate.NameHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Normal/Enemy"));
+            //Generate.SuffixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Normal/Suffix"));
+            Generate.GreaterPrefixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Greater/Prefix"));
+            Generate.GreaterNameHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Greater/Enemy"));
+            //Generate.GreaterSuffixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Greater/Suffix"));
         }
 
         public static string[] Terrain()
@@ -82,7 +106,7 @@ namespace YetAnotherGenericRougelikeGame
 
             Random rnd = new Random();
             int TerrainDecider = rnd.Next(0, 100);
-            string[] output = { "", "", ""};
+            string[] output = { "", "", "" };
 
             if (TerrainDecider <= 50) //Normal terrain
             {
@@ -136,7 +160,7 @@ namespace YetAnotherGenericRougelikeGame
 
             Random rnd = new Random();
             int ResourceDecider = rnd.Next(0, 100);
-            string[] output = { "", "", ""};
+            string[] output = { "", "", "" };
 
             if (ResourceDecider <= 15)
             {
@@ -179,12 +203,62 @@ namespace YetAnotherGenericRougelikeGame
 
         public static string[] CreatureGenerate()
         {
-            Random rnd = new Random();
-            int ResourceDecider = rnd.Next(0, 100);
-            string[] output = { "", "", "" };
 
+            Random rnd = new Random();
+            string[] output = { "", "", "-1" };
             output[0] = "0";
-            output[1] = Convert.ToString(rnd.Next(0, Generate.ForestLocations.Count()));
+            output[1] = Generate.PassiveCreatures[rnd.Next(0, Generate.PassiveCreatures.Count())];
+            return output;
+        }
+
+        public static string[] HostileGenerate()
+        {
+            /* Enemy Generation guide
+            Suffix - 33% chance
+            Prefix - 20% Chance
+
+            The value of Suffix and Prefix decider are added to output[2] 
+            this will be used in battle to enhance an enemys stats.
+
+            TODO - Re add suffixes
+             */
+            Random rnd = new Random();
+            string[] output = { "", "", "1" };
+            output[0] = "1";
+
+            if (rnd.Next(0, 2) == 0) //Prefix generation
+            {
+                int prefixdecider = rnd.Next(0, 2);
+                output[2] = Convert.ToString(1 + prefixdecider);
+                if (prefixdecider == 0) //Lesser prefix
+                {
+                    output[1] = Generate.LesserPrefixHostileCreatures[rnd.Next(0, Generate.LesserPrefixHostileCreatures.Count())] + " ";
+                }
+                else if (prefixdecider == 1) //Normal prefix
+                {
+                    output[1] = Generate.PrefixHostileCreatures[rnd.Next(0, Generate.PrefixHostileCreatures.Count())] + " ";
+                }
+                else if (prefixdecider == 2) //Greater prefix
+                {
+                    output[1] = Generate.NameHostileCreatures[rnd.Next(0, Generate.NameHostileCreatures.Count())] + " ";
+                }
+            }
+
+            output[1] = output[1] + Generate.NameHostileCreatures[rnd.Next(0, Generate.NameHostileCreatures.Count())];
+
+            if (rnd.Next(0, 4) == 10) //Suffix generation (Disabled until suffixes are added)
+            {
+                int suffixdecider = rnd.Next(0, 1);
+                output[2] = Convert.ToString(Convert.ToInt32(output[2]) + suffixdecider);
+                if (suffixdecider == 0) //Normal Suffix
+                {
+                    output[1] = output[1] + " " + Generate.SuffixHostileCreatures[rnd.Next(0, Generate.SuffixHostileCreatures.Count())];
+                }
+                else if (suffixdecider == 1) //Greater Suffix
+                {
+                    output[1] = output[1] + " " + Generate.GreaterSuffixHostileCreatures[rnd.Next(0, Generate.GreaterSuffixHostileCreatures.Count())];
+                }
+            }
             return output;
         }
     }
