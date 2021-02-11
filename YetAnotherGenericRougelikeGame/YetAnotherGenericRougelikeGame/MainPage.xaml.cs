@@ -18,7 +18,6 @@ namespace YetAnotherGenericRougelikeGame
 
         async void Play(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new GameView());
             try// These seem to fail on UWP (Win10/Xbox)
             {
                 await Permissions.CheckStatusAsync<Permissions.StorageRead>();

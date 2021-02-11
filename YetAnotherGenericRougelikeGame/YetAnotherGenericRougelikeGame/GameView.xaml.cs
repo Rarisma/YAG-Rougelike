@@ -37,6 +37,7 @@ namespace YetAnotherGenericRougelikeGame
             Generate.ClearResources();
             Generate.ReloadResources();
             InitializeComponent();
+            WorldGen();
         }
 
         public void WorldGen()

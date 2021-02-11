@@ -28,6 +28,8 @@ namespace YetAnotherGenericRougelikeGame
         public static List<string> TreeResources = new List<string>();
         public static List<string> RareTreeResources = new List<string>();
 
+        public static List<string> PassiveCreatures = new List<string>();
+
         public static void ClearResources() //Should be called before using ReloadResources()
         {
             RegularLocations.Clear();
@@ -42,6 +44,7 @@ namespace YetAnotherGenericRougelikeGame
             ForestLocations.Clear();
             TreeResources.Clear();
             RareTreeResources.Clear();
+            PassiveCreatures.Clear();
         }
 
         public static void ReloadResources() //Calling this function will reload all resources
@@ -58,6 +61,8 @@ namespace YetAnotherGenericRougelikeGame
             Generate.FruitTreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Trees/Fruit"));
             Generate.TreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Trees/Regular"));
             Generate.RareTreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/World/Trees/Rare"));
+
+            Generate.RareTreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Passive/Land"));
         }
 
         public static string[] Terrain()
@@ -169,6 +174,17 @@ namespace YetAnotherGenericRougelikeGame
                 output[1] = Convert.ToString(rnd.Next(0, Generate.TreeResources.Count()));
                 output[2] = "There is a " + Generate.TreeResources[Convert.ToInt32(output[1])] + " tree";
             }
+            return output;
+        }
+
+        public static string[] CreatureGenerate()
+        {
+            Random rnd = new Random();
+            int ResourceDecider = rnd.Next(0, 100);
+            string[] output = { "", "", "" };
+
+            output[0] = "0";
+            output[1] = Convert.ToString(rnd.Next(0, Generate.ForestLocations.Count()));
             return output;
         }
     }
