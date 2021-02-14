@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="9e15ef82-aa65-4370-aed3-dd31b5358ee0" Publisher="CN=fa358706-e908-4dfb-8ea0-df5a462cab4c" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="9e15ef82-aa65-4370-aed3-dd31b5358ee0" Publisher="CN=Rarisma" Version="1.0.1.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>YAGRougelike.UWP</DisplayName>

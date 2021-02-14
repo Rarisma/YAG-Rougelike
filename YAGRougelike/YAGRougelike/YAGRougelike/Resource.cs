@@ -73,10 +73,10 @@ namespace YAGRougelike
             Resource.LesserNameHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Lesser/Enemy"));
             Resource.PrefixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Normal/Prefix"));
             Resource.NameHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Normal/Enemy"));
-            //Resource.SuffixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Normal/Suffix"));
+            Resource.SuffixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Normal/Suffix"));
             Resource.GreaterPrefixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Greater/Prefix"));
             Resource.GreaterNameHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Greater/Enemy"));
-            //Resource.GreaterSuffixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Greater/Suffix"));
+            Resource.GreaterSuffixHostileCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Hostile/Greater/Suffix"));
         }
     }
 }

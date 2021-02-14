@@ -15,7 +15,6 @@ namespace YAGRougelike
 {
     public class Generate
     {
-
         public static string[] Terrain()
         {
             /*Heres how the terrain gen works:
@@ -93,37 +92,37 @@ namespace YAGRougelike
             {
                 output[0] = "0";
                 output[1] = Convert.ToString(rnd.Next(0, Resource.BushResources.Count()));
-                output[2] = "There is a " + Resource.BushResources[Convert.ToInt32(output[1])] + "\n";
+                output[2] = "There is a " + Resource.BushResources[Convert.ToInt32(output[1])].ToLower() + "\n";
             }
             else if (ResourceDecider >= 16 && ResourceDecider <= 30)
             {
                 output[0] = "1";
                 output[1] = Convert.ToString(rnd.Next(0, Resource.FloorPlantResources.Count()));
-                output[2] = "There is a " + Resource.FloorPlantResources[Convert.ToInt32(output[1])] + "\n";
+                output[2] = "There is a " + Resource.FloorPlantResources[Convert.ToInt32(output[1])].ToLower() + "\n";
             }
             else if (ResourceDecider >= 31 && ResourceDecider <= 40)
             {
                 output[0] = "2";
                 output[1] = Convert.ToString(rnd.Next(0, Resource.WaterPlantResources.Count()));
-                output[2] = "There is a " + Resource.WaterPlantResources[Convert.ToInt32(output[1])] + "\n";
+                output[2] = "There is a " + Resource.WaterPlantResources[Convert.ToInt32(output[1])].ToLower() + "\n";
             }
             else if (ResourceDecider >= 41 && ResourceDecider <= 60)
             {
                 output[0] = "3";
                 output[1] = Convert.ToString(rnd.Next(0, Resource.FruitTreeResources.Count()));
-                output[2] = "There is a " + Resource.FruitTreeResources[Convert.ToInt32(output[1])] + " tree\n";
+                output[2] = "There is a " + Resource.FruitTreeResources[Convert.ToInt32(output[1])].ToLower() + " tree\n";
             }
             else if (ResourceDecider >= 61 && ResourceDecider <= 96)
             {
                 output[0] = "4";
                 output[1] = Convert.ToString(rnd.Next(0, Resource.TreeResources.Count()));
-                output[2] = "There is a " + Resource.TreeResources[Convert.ToInt32(output[1])] + " tree\n";
+                output[2] = "There is a " + Resource.TreeResources[Convert.ToInt32(output[1])].ToLower() + " tree\n";
             }
             else if (ResourceDecider >= 97 && ResourceDecider <= 100)
             {
                 output[0] = "4";
                 output[1] = Convert.ToString(rnd.Next(0, Resource.TreeResources.Count()));
-                output[2] = "There is a " + Resource.TreeResources[Convert.ToInt32(output[1])] + " tree\n";
+                output[2] = "There is a " + Resource.TreeResources[Convert.ToInt32(output[1])].ToLower() + " tree\n";
             }
             return output;
         }
@@ -134,7 +133,7 @@ namespace YAGRougelike
             Random rnd = new Random();
             string[] output = { "", "", "-1", "true"};
             output[0] = "0";
-            output[1] = Resource.PassiveCreatures[rnd.Next(0, Resource.PassiveCreatures.Count())];
+            output[1] = Resource.PassiveCreatures[rnd.Next(0, Resource.PassiveCreatures.Count())].ToLower();
             return output;
         }
 
@@ -167,13 +166,13 @@ namespace YAGRougelike
                 }
                 else if (prefixdecider == 2) //Greater prefix
                 {
-                    output[1] = Resource.NameHostileCreatures[rnd.Next(0, Resource.NameHostileCreatures.Count())] + " ";
+                    output[1] = Resource.NameHostileCreatures[rnd.Next(0, Resource.NameHostileCreatures.Count())] + " ";    
                 }
             }
 
             output[1] = output[1] + Resource.NameHostileCreatures[rnd.Next(0, Resource.NameHostileCreatures.Count())];
 
-            if (rnd.Next(0, 4) == 10) //Suffix generation (Disabled until suffixes are added)
+            if (rnd.Next(0, 4) == 1) //Suffix generation (Disabled until suffixes are added)
             {
                 int suffixdecider = rnd.Next(0, 1);
                 output[2] = Convert.ToString(Convert.ToInt32(output[2]) + suffixdecider);
@@ -186,6 +185,7 @@ namespace YAGRougelike
                     output[1] = output[1] + " " + Resource.GreaterSuffixHostileCreatures[rnd.Next(0, Resource.GreaterSuffixHostileCreatures.Count())];
                 }
             }
+            output[1] = output[1].ToLower();
             return output;
         }
     }
