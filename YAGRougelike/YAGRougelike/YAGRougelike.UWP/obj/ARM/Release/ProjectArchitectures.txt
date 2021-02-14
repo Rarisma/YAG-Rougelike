@@ -1,0 +1,1 @@
+E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\YAGRougelike.UWP.csproj;arm

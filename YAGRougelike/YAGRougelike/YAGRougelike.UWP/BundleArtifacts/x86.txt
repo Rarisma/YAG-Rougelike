@@ -1,2 +1,2 @@
-MainPackage=E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x86\Debug\YAGRougelike.UWP_1.0.1.0_x86_Debug.appx
-SymbolPackage=E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\obj\x86\Debug\Symbols\YAGRougelike.UWP_1.0.1.0_x86_Debug.appxsym
+MainPackage=E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x86\Release\YAGRougelike.UWP_0.2.0.0_x86.appx
+SymbolPackage=E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\obj\x86\Release\Symbols\YAGRougelike.UWP_0.2.0.0_x86.appxsym

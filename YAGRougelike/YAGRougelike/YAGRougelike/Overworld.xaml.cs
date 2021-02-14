@@ -17,6 +17,7 @@ namespace YAGRougelike
             InitializeComponent();
             Resource.ClearResources();
             Resource.ReloadResources();
+            PlayerData.Reset();
             WorldGen();
         }
 
@@ -24,6 +25,11 @@ namespace YAGRougelike
         {
             Button button = sender as Button;
             string ButtonText = Convert.ToString(button.Text.Replace("Move ", ""));
+
+            if (ButtonText == "North") {PlayerData.Coordinates[1] += 1;}
+            if (ButtonText == "South") {PlayerData.Coordinates[1] -= 1;}
+            if (ButtonText == "East") { PlayerData.Coordinates[0] += 1; }
+            if (ButtonText == "West") { PlayerData.Coordinates[0] -= 1; }
             WorldGen();
         }
 
@@ -50,6 +56,8 @@ namespace YAGRougelike
                 South.IsVisible = true;
             }
             DisplayText.Text = "You are " + Terrain[2] + "\n" + Resources[0][2] + Resources[1][2] + Resources[2][2] + Resources[3][2] + Creature[1];
+            Debug.Text = "Debug info\nLocation " + Terrain + "\nRes0: " + Resources[0][0] + " " + Resources[0][1] + " " +  Resources[0][2] + "Res1: " + Resources[1][0] + " " + Resources[1][1] + " " + Resources[1][2] + "Res2: " + Resources[2][0] + " " + Resources[2][1] + " " + Resources[2][2] + "Res3: " + Resources[3][0] + " " + Resources[3][1] + " " + Resources[3][2];
+            Coords.Text = "Coordinates:\nX: " + PlayerData.Coordinates[0] + "\nY: " + PlayerData.Coordinates[1];
         }
          
         public static string[] CreatureDisplay()

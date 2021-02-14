@@ -4,11 +4,11 @@
              x:Class="YAGRougelike.MainPage">
 
     <Grid>
-        <StackLayout BackgroundColor="#444444">
-            <BoxView Color="#444" HeightRequest="100"/>
+        <StackLayout BackgroundColor="#121212">
+            <BoxView Color="#121212" HeightRequest="100"/>
             <Label Text="Rougealike" FontSize="50" TextColor="AliceBlue" FontAttributes="Bold" HorizontalOptions="Center"/>
-            <Label Text="Version 0.1.0 Xamarin Alpha&#x0a;           Made by Rarisma" FontSize="Small" TextColor="AliceBlue" HorizontalOptions="Center"/>
-            <BoxView Color="#444" HeightRequest="100"/>
+            <Label Text="Version 0.2.0 Xamarin Beta&#x0a;           Made by Rarisma" FontSize="Small" TextColor="AliceBlue" HorizontalOptions="Center"/>
+            <BoxView Color="#121212" HeightRequest="100"/>
 
             <Button x:Name="PlayButton" Text="Play" Margin="20" Clicked="Play"/>
             <Button Text="Settings" Margin="20" IsEnabled="False"/>

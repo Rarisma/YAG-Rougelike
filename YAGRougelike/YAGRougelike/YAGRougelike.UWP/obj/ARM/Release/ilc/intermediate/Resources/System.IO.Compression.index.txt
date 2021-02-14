@@ -1,0 +1,2 @@
+System.IO.Compression, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  FxResources.System.IO.Compression.SR.resources

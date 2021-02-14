@@ -7,24 +7,27 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="200"/>
+                <RowDefinition Height="100"/>
                 <RowDefinition Height="200"/>
+
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="20"/>
                     <RowDefinition Height="15"/>
                 </Grid.RowDefinitions>
 
-                <Label Text="Coordinates:&#x0d;&#x0a;X:????&#x0d;&#x0a;Y:????" Grid.RowSpan="3" TextColor="White"/>
+                <Label x:Name="Coords" Text="Coordinates:&#x0d;&#x0a;X:????&#x0d;&#x0a;Y:????" Grid.RowSpan="3" TextColor="White"/>
                 <Label x:Name="XPInfo" Text="Level 0 (0/1000)" HorizontalOptions="Center" FontSize="Small" TextColor="White"/>
                 <ProgressBar x:Name="XPBar" Grid.Row="1" ProgressColor="LightSeaGreen" HorizontalOptions="Center" WidthRequest="250"/>
             </Grid>
 
             <Label x:Name="DisplayText" Text="DisplayText" TextColor="White" Grid.Row="1" FontSize="20" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-            
+            <Label x:Name="Debug" Text="DEBUG" TextColor="White" Grid.Row="2" FontSize="15" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+
             <!-- This grid controls the positioning and height of the movement buttons-->
-            <Grid Grid.Row="2" HorizontalOptions="Center">
+            <Grid Grid.Row="3" HorizontalOptions="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="50"/>
