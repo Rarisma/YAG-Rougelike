@@ -1,0 +1,7 @@
+E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike\obj\Debug\netstandard2.1\YAGRougelike.csprojAssemblyReference.cache
+E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike\obj\Debug\netstandard2.1\App.xaml.g.cs
+E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike\obj\Debug\netstandard2.1\MainPage.xaml.g.cs
+E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike\obj\Debug\netstandard2.1\Overworld.xaml.g.cs
+E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike\obj\Debug\netstandard2.1\YAGRougelike.AssemblyInfoInputs.cache
+E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike\obj\Debug\netstandard2.1\YAGRougelike.AssemblyInfo.cs
+E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike\obj\Debug\netstandard2.1\YAGRougelike.csproj.CoreCompileInputs.cache

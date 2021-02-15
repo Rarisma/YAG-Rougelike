@@ -1,0 +1,11 @@
+#prefix
+near a
+#Depth limit
+40
+#Can metals spawn here?
+True
+#Can gems spawn here?
+false
+#Unique resource
+false
+A sad feeling

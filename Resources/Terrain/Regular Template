@@ -1,0 +1,19 @@
+#prefix
+Put somthing that should go after You are but before your terrain name.
+#Can this place have trees?
+True/False
+#Can Hostiles spawn?
+True/False
+#Can passive creatures spawn?
+True/False
+#Can Bosses Spawn?
+True/False
+#Can metals spawn here?
+True/False
+#Can water plants spawn here?
+True/False
+#Can Bushes spawn here?
+True/False
+#Unique resource
+True/False
+Put an Item name if enabled.

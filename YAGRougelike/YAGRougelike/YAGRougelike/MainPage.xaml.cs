@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,7 +15,9 @@ namespace YAGRougelike
         public MainPage()
         {
             InitializeComponent();
-        }
+            string test = File.ReadLines("E:\\Repositories\\New Resources\\Terrain\\Regular").Skip(1).Take(1).First();
+            Buildstring.Text = test;
+        }   
         async void Play(object sender, EventArgs e)
         {
             try// These seem to fail on UWP (Win10/Xbox)

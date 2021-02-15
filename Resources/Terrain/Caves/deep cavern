@@ -1,0 +1,11 @@
+#prefix
+staring down a
+#Depth limit
+999
+#Can metals spawn here?
+True
+#Can gems spawn here?
+true
+#Unique resource
+true
+strange prism

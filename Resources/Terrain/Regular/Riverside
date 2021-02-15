@@ -1,0 +1,19 @@
+#prefix - Down to the river with you!
+beside a
+#Can this place have trees?
+True
+#Can Hostiles spawn?
+True
+#Can passive creatures spawn?
+True
+#Can Bosses Spawn?
+False
+#Can metals spawn here?
+False
+#Can water plants spawn here?
+True
+#Can Bushes spawn here?
+True
+#Unique resource - Every good game needs a fishing element, which is why YAG doesnt have one yet
+True
+Carp

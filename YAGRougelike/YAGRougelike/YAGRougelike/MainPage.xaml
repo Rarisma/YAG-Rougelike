@@ -7,7 +7,7 @@
         <StackLayout BackgroundColor="#121212">
             <BoxView Color="#121212" HeightRequest="100"/>
             <Label Text="Rougealike" FontSize="50" TextColor="AliceBlue" FontAttributes="Bold" HorizontalOptions="Center"/>
-            <Label Text="Version 0.2.0 Xamarin Beta&#x0a;           Made by Rarisma" FontSize="Small" TextColor="AliceBlue" HorizontalOptions="Center"/>
+            <Label x:Name="Buildstring" Text="Version 0.2.0 Xamarin Beta&#x0a;           Made by Rarisma" FontSize="Small" TextColor="AliceBlue" HorizontalOptions="Center"/>
             <BoxView Color="#121212" HeightRequest="100"/>
 
             <Button x:Name="PlayButton" Text="Play" Margin="20" Clicked="Play"/>

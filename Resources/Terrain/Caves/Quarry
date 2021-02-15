@@ -1,0 +1,11 @@
+#prefix
+at the top of a 
+#Depth limit
+10
+#Can metals spawn here?
+True
+#Can gems spawn here?
+false
+#Unique resource
+false
+A sense of hoplessness?

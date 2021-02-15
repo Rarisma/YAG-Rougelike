@@ -1,0 +1,11 @@
+#prefix
+at the base of a 
+#max height
+256
+#Can metals spawn here?
+True
+#Can gems spawn here?
+false
+#Unique resource
+true
+metalic snowflake

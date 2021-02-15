@@ -1,0 +1,18 @@
+#prefix
+in a
+#Can this place have trees?
+False
+#Can Hostiles spawn?
+false
+#Can passive creatures spawn?
+True
+#Can Bosses Spawn?
+False
+#Can metals spawn here?
+false
+#Can water plants spawn here?
+True
+#Can Bushes spawn here?
+False
+#Unique resource
+False
