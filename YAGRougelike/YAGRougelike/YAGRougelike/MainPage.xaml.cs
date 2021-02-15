@@ -40,7 +40,7 @@ namespace YAGRougelike
             string test = File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Terrain//Regular//Beach").Skip(1).Take(1).First();
             System.Collections.Generic.List<string> Testlist = new System.Collections.Generic.List<string>();
             string temp = "";
-            for (int i  = 0; i <= test.Length; i++)
+            for (int i  = 0; i < test.Length; i++)
             {
                 if (test[i] == Convert.ToChar(","))
                 {

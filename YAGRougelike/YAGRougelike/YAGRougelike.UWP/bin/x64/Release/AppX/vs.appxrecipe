@@ -30,7 +30,7 @@
     <AppXManifest Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Release\ilc\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-02-15T03:09:08.096</Modified>
+      <Modified>2021-02-15T12:08:50.114</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -183,19 +183,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Release\ilc\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-02-15T03:07:29.214</Modified>
+      <Modified>2021-02-15T12:07:01.728</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Release\ilc\YAGRougelike.UWP.dll">
       <PackagePath>YAGRougelike.UWP.dll</PackagePath>
-      <Modified>2021-02-15T03:09:06.335</Modified>
+      <Modified>2021-02-15T12:08:47.794</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Release\ilc\YAGRougelike.UWP.exe">
       <PackagePath>YAGRougelike.UWP.exe</PackagePath>
-      <Modified>2021-02-15T03:09:08.026</Modified>
+      <Modified>2021-02-15T12:08:50.042</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Release\ilc\YAGRougelike.UWP.pdb">
       <PackagePath>YAGRougelike.UWP.pdb</PackagePath>
-      <Modified>2021-02-15T03:09:08.020</Modified>
+      <Modified>2021-02-15T12:08:50.031</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
