@@ -1,15 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.IO.Compression;
-using System.Net;
-using System.Threading;
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace YAGRougelike
 {
@@ -71,7 +61,7 @@ namespace YAGRougelike
         {
             /* Heres how the resource gen works
             Random Value   Name               ID
-            
+
             00-15     -    Bush               0
             16-30     -    Floor plants       1
             31-40     -    Waterplants        2
@@ -109,8 +99,8 @@ namespace YAGRougelike
             else if (ResourceDecider >= 41 && ResourceDecider <= 60)
             {
                 output[0] = "3";
-                output[1] = Convert.ToString(rnd.Next(0, Resource.FruitTreeResources.Count()));
-                output[2] = "There is a " + Resource.FruitTreeResources[Convert.ToInt32(output[1])].ToLower() + " tree\n";
+                output[1] = Convert.ToString(rnd.Next(0, Resource.FruitResources.Count()));
+                output[2] = "There is a " + Resource.FruitResources[Convert.ToInt32(output[1])].ToLower() + " tree\n";
             }
             else if (ResourceDecider >= 61 && ResourceDecider <= 96)
             {
@@ -129,9 +119,8 @@ namespace YAGRougelike
 
         public static string[] CreatureGenerate()
         {
-
             Random rnd = new Random();
-            string[] output = { "", "", "-1", "true"};
+            string[] output = { "", "", "-1", "true" };
             output[0] = "0";
             output[1] = Resource.PassiveCreatures[rnd.Next(0, Resource.PassiveCreatures.Count())].ToLower();
             return output;
@@ -143,48 +132,15 @@ namespace YAGRougelike
             Suffix - 33% chance
             Prefix - 20% Chance
 
-            The value of Suffix and Prefix decider are added to output[2] 
+            The value of Suffix and Prefix decider are added to output[2]
             this will be used in battle to enhance an enemys stats.
 
             TODO - Re add suffixes
              */
             Random rnd = new Random();
-            string[] output = { "", "", "1", "" };
+            string[] output = { "", "enemytext", "1", "" };
             output[0] = "1";
 
-            if (rnd.Next(0, 2) == 0) //Prefix generation
-            {
-                int prefixdecider = rnd.Next(0, 2);
-                output[2] = Convert.ToString(1 + prefixdecider);
-                if (prefixdecider == 0) //Lesser prefix
-                {
-                    output[1] = Resource.LesserPrefixHostileCreatures[rnd.Next(0, Resource.LesserPrefixHostileCreatures.Count())] + " ";
-                }
-                else if (prefixdecider == 1) //Normal prefix
-                {
-                    output[1] = Resource.PrefixHostileCreatures[rnd.Next(0, Resource.PrefixHostileCreatures.Count())] + " ";
-                }
-                else if (prefixdecider == 2) //Greater prefix
-                {
-                    output[1] = Resource.NameHostileCreatures[rnd.Next(0, Resource.NameHostileCreatures.Count())] + " ";    
-                }
-            }
-
-            output[1] = output[1] + Resource.NameHostileCreatures[rnd.Next(0, Resource.NameHostileCreatures.Count())];
-
-            if (rnd.Next(0, 4) == 1) //Suffix generation (Disabled until suffixes are added)
-            {
-                int suffixdecider = rnd.Next(0, 1);
-                output[2] = Convert.ToString(Convert.ToInt32(output[2]) + suffixdecider);
-                if (suffixdecider == 0) //Normal Suffix
-                {
-                    output[1] = output[1] + " " + Resource.SuffixHostileCreatures[rnd.Next(0, Resource.SuffixHostileCreatures.Count())];
-                }
-                else if (suffixdecider == 1) //Greater Suffix
-                {
-                    output[1] = output[1] + " " + Resource.GreaterSuffixHostileCreatures[rnd.Next(0, Resource.GreaterSuffixHostileCreatures.Count())];
-                }
-            }
             output[1] = output[1].ToLower();
             return output;
         }

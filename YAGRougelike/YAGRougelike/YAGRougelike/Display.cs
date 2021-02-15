@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using Xamarin.Essentials;
 
 namespace YAGRougelike
 {
     public class Display
     {
-
         public static List<string[]> Resources()
         {
             List<string[]> output = new List<string[]>();
