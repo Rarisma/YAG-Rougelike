@@ -6,24 +6,23 @@ namespace YAGRougelike
 {
     public class Generate
     {
-
         public static string[] Terrain()
         {
-           /*Heres how the terrain gen works:
-            Random Number      Name            ID
-            00-5               Normal          0
-            06-10              Forrest         1
-            11-15              Cave            2
-            16-20              Mountain        3
-            ??-???             Unique           (Not implemented yet)
-            ID's are used to let the code understand what list is being picked from
+            /*Heres how the terrain gen works:
+             Random Number      Name            ID
+             00-5               Normal          0
+             06-10              Forrest         1
+             11-15              Cave            2
+             16-20              Mountain        3
+             ??-???             Unique           (Not implemented yet)
+             ID's are used to let the code understand what list is being picked from
 
-            The code below basically gets a random number and then
-            goes to the corresponding if, then it picks a random item
-            in the corresponding list.*/
+             The code below basically gets a random number and then
+             goes to the corresponding if, then it picks a random item
+             in the corresponding list.*/
 
             Random rnd = new Random();
-            int TerrainDecider = rnd.Next(0, 4);
+            int TerrainDecider = rnd.Next(0, 20);
             string[] fixer = { "", "", "" };
             List<String> Prefixes = new List<String>();
             if (TerrainDecider <= 5)
@@ -36,21 +35,21 @@ namespace YAGRougelike
             }
             else if (TerrainDecider <= 10 && TerrainDecider > 5)
             {
-                string[] output = { "1", Convert.ToString(Resource.ForrestPrefixes[rnd.Next(0, Resource.ForrestPrefixes.Count())]+ " " + Resource.WoodTypes[rnd.Next(0, Resource.WoodTypes.Count())]) + " forrest." };
+                string[] output = { "1", Convert.ToString(Resource.ForrestPrefixes[rnd.Next(0, Resource.ForrestPrefixes.Count())] + " " + Resource.WoodTypes[rnd.Next(0, Resource.WoodTypes.Count())]) + " forrest." };
                 return output;
             }
             else if (TerrainDecider <= 15 && TerrainDecider > 10)
             {
                 string[] output = { "2", Convert.ToString(Resource.CaveLocations[rnd.Next(0, Resource.CaveLocations.Count)]), "" };
                 Prefixes.AddRange(Resource.TerrainPrefixLoader("//Data//Resources//Terrain//Caves//" + output[1]));
-                output[2] = Prefixes[rnd.Next(0, Prefixes.Count()-1)];
+                output[2] = Prefixes[rnd.Next(0, Prefixes.Count() - 1)];
                 return output;
             }
             else if (TerrainDecider <= 20 && TerrainDecider > 15)
             {
                 string[] output = { "3", Convert.ToString(Resource.MountainLocations[rnd.Next(0, Resource.MountainLocations.Count)]), "" };
                 Prefixes.AddRange(Resource.TerrainPrefixLoader("//Data//Resources//Terrain//Mountains//" + output[1]));
-                output[2] = Prefixes[rnd.Next(0, Prefixes.Count()-1)];
+                output[2] = Prefixes[rnd.Next(0, Prefixes.Count() - 1)];
                 return output;
             }
 
