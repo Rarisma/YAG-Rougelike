@@ -10,7 +10,7 @@ namespace YAGRougelike
     public class Resource
     {
         public static List<string> RegularLocations = new List<string>();
-        public static List<string> ForestLocations = new List<string>();
+        public static List<string> WoodTypes = new List<string>();
         public static List<string> CaveLocations = new List<string>();
         public static List<string> MountainLocations = new List<string>();
 
@@ -26,13 +26,12 @@ namespace YAGRougelike
         public static List<string> EnemyPrefix = new List<string>();
         public static List<string> Enemies = new List<string>();
         public static List<string> EnemySuffix = new List<string>();
-
-
+        public static List<string> ForrestPrefixes = new List<string>();
 
         public static void ClearResources() //Should be called before using ReloadResources()
         {
             RegularLocations.Clear();
-            ForestLocations.Clear();
+            WoodTypes.Clear();
             CaveLocations.Clear();
             MountainLocations.Clear();
             BushResources.Clear();
@@ -40,22 +39,23 @@ namespace YAGRougelike
             WaterPlantResources.Clear();
             FruitResources.Clear();
             TreeResources.Clear();
-            ForestLocations.Clear();
             TreeResources.Clear();
             RareTreeResources.Clear();
             PassiveCreatures.Clear();
             EnemyPrefix.Clear();
             Enemies.Clear();
             EnemySuffix.Clear();
-
+            ForrestPrefixes.Clear();
         }
 
         public static void ReloadResources() //Calling this function will reload all resources
         {
             Resource.RegularLocations.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Terrain//Regular//"));
             Resource.CaveLocations.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Terrain//Caves//"));
-            Resource.ForestLocations.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Terrain/Forests"));
+            Resource.WoodTypes.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Flora/Normal Trees"));
             Resource.MountainLocations.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Terrain//Mountains//"));
+            Resource.ForrestPrefixes.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Terrain/Forests"));
+
 
             Resource.BushResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Flora/Bushes"));
             Resource.FloorPlantResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Floor"));
@@ -66,9 +66,9 @@ namespace YAGRougelike
             Resource.RareTreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Flora/Rare Trees"));
 
             Resource.PassiveCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Passive/Land"));
-            Resource.EnemyPrefix.AddRange(Resource.FileBasedResourceLoader("Data//Resources//Creatures//Hostile//Prefix"));
-            Resource.Enemies.AddRange(Resource.FileBasedResourceLoader("Data//Resources//Creatures//Hostile//Enemy"));
-            Resource.EnemySuffix.AddRange(Resource.FileBasedResourceLoader("Data//Resources//Creatures//Hostile//Suffix"));
+            Resource.EnemyPrefix.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Creatures//Hostile//Prefix"));
+            Resource.Enemies.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Creatures//Hostile//Enemy"));
+            Resource.EnemySuffix.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Creatures//Hostile//Suffix"));
         }
 
         public static List<string> FileBasedResourceLoader(string PathToDirectoryToLoadFrom)

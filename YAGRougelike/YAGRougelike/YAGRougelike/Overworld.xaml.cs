@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -52,7 +51,7 @@ namespace YAGRougelike
                 East.IsVisible = true;
                 South.IsVisible = true;
             }
-            DisplayText.Text = "You are " + Terrain[2] + "\n" + Resources[0][2] + Resources[1][2] + Resources[2][2] + Resources[3][2] + Creature[1];
+            DisplayText.Text = "You are " + Terrain[2] + " " + Terrain[1] + "\n" + Resources[0][2] + Resources[1][2] + Resources[2][2] + Resources[3][2] + Creature[1];
             Debug.Text = "Debug info\nLocation " + Terrain + "\nRes0: " + Resources[0][0] + " " + Resources[0][1] + " " + Resources[0][2] + "Res1: " + Resources[1][0] + " " + Resources[1][1] + " " + Resources[1][2] + "Res2: " + Resources[2][0] + " " + Resources[2][1] + " " + Resources[2][2] + "Res3: " + Resources[3][0] + " " + Resources[3][1] + " " + Resources[3][2];
             Coords.Text = "Coordinates:\nX: " + PlayerData.Coordinates[0] + "\nY: " + PlayerData.Coordinates[1];
         }
