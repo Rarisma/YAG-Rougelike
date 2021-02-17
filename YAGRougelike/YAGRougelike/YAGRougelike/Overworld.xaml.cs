@@ -31,9 +31,6 @@ namespace YAGRougelike
 
         public void WorldGen()
         {
-            Random rnd = new Random();
-            int Decider = rnd.Next(0, 10);
-
             string[] Terrain = Generate.Terrain();
             List<string[]> Resources = Display.Resources();
             string[] Creature = CreatureDisplay();

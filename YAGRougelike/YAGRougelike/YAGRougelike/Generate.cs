@@ -22,12 +22,12 @@ namespace YAGRougelike
              in the corresponding list.*/
 
             Random rnd = new Random();
-            int TerrainDecider = rnd.Next(0, 20);
+            int TerrainDecider = rnd.Next(6, 6);
             string[] fixer = { "", "", "" };
             List<String> Prefixes = new List<String>();
             if (TerrainDecider <= 5)
             {
-                string[] output = { "0", Convert.ToString(Resource.RegularLocations[rnd.Next(0, Resource.RegularLocations.Count)]), "" };
+                string[] output = { "0", " " + Convert.ToString(Resource.RegularLocations[rnd.Next(0, Resource.RegularLocations.Count)]), "" };
                 Prefixes.AddRange(Resource.TerrainPrefixLoader("//Data//Resources//Terrain//Regular//" + output[1]));
                 int test = Prefixes.Count();
                 output[2] = Prefixes[rnd.Next(0, Prefixes.Count())];
@@ -35,19 +35,19 @@ namespace YAGRougelike
             }
             else if (TerrainDecider <= 10 && TerrainDecider > 5)
             {
-                string[] output = { "1", Convert.ToString(Resource.ForrestPrefixes[rnd.Next(0, Resource.ForrestPrefixes.Count())] + " " + Resource.WoodTypes[rnd.Next(0, Resource.WoodTypes.Count())]) + " forrest." };
+                string[] output = { "1", Convert.ToString(Resource.ForrestPrefixes[rnd.Next(0, Resource.ForrestPrefixes.Count())] + Resource.WoodTypes[rnd.Next(0, Resource.WoodTypes.Count())]) + " forrest.", "" };
                 return output;
             }
             else if (TerrainDecider <= 15 && TerrainDecider > 10)
             {
-                string[] output = { "2", Convert.ToString(Resource.CaveLocations[rnd.Next(0, Resource.CaveLocations.Count)]), "" };
+                string[] output = { "2", " " + Convert.ToString(Resource.CaveLocations[rnd.Next(0, Resource.CaveLocations.Count)]), "" };
                 Prefixes.AddRange(Resource.TerrainPrefixLoader("//Data//Resources//Terrain//Caves//" + output[1]));
                 output[2] = Prefixes[rnd.Next(0, Prefixes.Count() - 1)];
                 return output;
             }
             else if (TerrainDecider <= 20 && TerrainDecider > 15)
             {
-                string[] output = { "3", Convert.ToString(Resource.MountainLocations[rnd.Next(0, Resource.MountainLocations.Count)]), "" };
+                string[] output = { "3", " " + Convert.ToString(Resource.MountainLocations[rnd.Next(0, Resource.MountainLocations.Count)]), "" };
                 Prefixes.AddRange(Resource.TerrainPrefixLoader("//Data//Resources//Terrain//Mountains//" + output[1]));
                 output[2] = Prefixes[rnd.Next(0, Prefixes.Count() - 1)];
                 return output;

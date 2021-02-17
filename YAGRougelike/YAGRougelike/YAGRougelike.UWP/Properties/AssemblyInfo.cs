@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("YAGRougelike.UWP")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Yet Another Generic Rougelike Game")]
+[assembly: AssemblyDescription("Its a generic rougerlike game what were you expecting?")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("YAGRougelike.UWP")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyProduct("Yet Another Generic Rougelike Game UWP")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

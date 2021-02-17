@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>D892CB821606940BA35AEC93589C595ECE86078306F943E8553D111862F6ABB0</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>D7830593CEB576610D6C3AEFB004F2BA3323FB38154833F3DEF41DF58F297B92</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>9e15ef82-aa65-4370-aed3-dd31b5358ee0_0.2.0.0_x64__9rjdckjh9bgnm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>9e15ef82-aa65-4370-aed3-dd31b5358ee0_9rjdckjh9bgnm!App</RegisteredUserModeAppID>
     <RegisteredPackageID>9e15ef82-aa65-4370-aed3-dd31b5358ee0</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-02-16T00:13:17.193</Modified>
+      <Modified>2021-02-17T00:37:55.378</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Debug\YAGRougelike.UWP.exe">
       <PackagePath>entrypoint\YAGRougelike.UWP.exe</PackagePath>
-      <Modified>2021-02-16T00:13:13.175</Modified>
+      <Modified>2021-02-17T00:37:51.558</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.netcore.universalwindowsplatform\6.2.10\runtimes\win10-x64\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -68,7 +68,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike\bin\Debug\netstandard2.0\YAGRougelike.dll">
       <PackagePath>YAGRougelike.dll</PackagePath>
-      <Modified>2021-02-16T00:13:05.446</Modified>
+      <Modified>2021-02-17T00:39:26.718</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jake\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -227,11 +227,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-02-16T00:13:13.069</Modified>
+      <Modified>2021-02-16T23:42:13.255</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-02-16T00:13:13.069</Modified>
+      <Modified>2021-02-16T23:42:13.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\X64\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -247,11 +247,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-02-16T00:13:14.356</Modified>
+      <Modified>2021-02-17T00:37:53.640</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Repositories\YAG Rougelike\YAGRougelike\YAGRougelike\YAGRougelike.UWP\bin\x64\Debug\Core\YAGRougelike.UWP.exe">
       <PackagePath>YAGRougelike.UWP.exe</PackagePath>
-      <Modified>2021-02-16T00:13:17.187</Modified>
+      <Modified>2021-02-17T00:37:55.344</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
