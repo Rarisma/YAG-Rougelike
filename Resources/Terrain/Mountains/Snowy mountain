@@ -1,11 +1,9 @@
 #prefix
 at the base of a,at the bottom of a,wondering if you will reach the summit of the,camping at the base of a,
+#ResourceIDs to load
+-1,1,6,
 #max height
 256
-#Can metals spawn here?
-True
-#Can gems spawn here?
-false
 #Unique resource
 true
 metalic snowflake

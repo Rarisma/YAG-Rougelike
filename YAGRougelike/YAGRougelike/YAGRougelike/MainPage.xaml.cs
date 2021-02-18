@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace YAGRougelike
+namespace YAGRougelike //Get F.lux!
 {
     public partial class MainPage : ContentPage
     {
@@ -35,7 +35,8 @@ namespace YAGRougelike
             catch { await Task.Delay(1); }
 
             await Navigation.PushModalAsync(new Overworld());
-            PlayButton.Text = "Update complete!";
+            Buildstring.Text = Resource.ResourceIDsLoader("//Data//Resources//Terrain//Regular//Beach")[1];
+            //PlayButton.Text = "Update complete!";
             await Task.Delay(1000);
             PlayButton.Text = "Play";
         }

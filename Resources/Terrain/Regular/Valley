@@ -1,18 +1,12 @@
 #prefix
 in a,lost in a,at the bottom of a,
-#Can this place have trees?
-False
+#ResourceIDs
+0,1,2,3,4,5,
 #Can Hostiles spawn?
 false
 #Can passive creatures spawn?
 True
 #Can Bosses Spawn?
-False
-#Can metals spawn here?
-false
-#Can water plants spawn here?
-True
-#Can Bushes spawn here?
 False
 #Unique resource
 False

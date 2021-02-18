@@ -1,18 +1,12 @@
 #prefix
 in a,looking down at a,looking into a,Staring an endless,observing the creatures in the,looking at the shadowy figures in the,climbing into,
-#Can this place have trees?
-False
+#ResourceIDs
+0,1,3,4,5,6,
 #Can Hostiles spawn?
 True
 #Can passive creatures spawn?
 True
 #Can Bosses Spawn?
-False
-#Can metals spawn here?
-True
-#Can water plants spawn here?
-True
-#Can Bushes spawn here?
 False
 #Unique resource
 True

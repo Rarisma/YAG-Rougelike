@@ -1,11 +1,9 @@
 #prefix
 near a,inside of a,looking into an abandoned,
+#ResourceIDs to Load
+6,
 #Depth limit
 40
-#Can metals spawn here?
-True
-#Can gems spawn here?
-false
 #Unique resource
 false
 A sad feeling

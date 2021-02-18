@@ -1,19 +1,14 @@
 #prefix
 at a,lost in,somehow at a,now at a,standing at a,overlooking a,sat on a,resting on a,laid on a,relaxing on a,sunbathing on a,looking towards,
-#Can this place have trees?
-False
+#ResourceIDs
+2,
 #Can Hostiles spawn?
 False
 #Can passive creatures spawn?
 False
 #Can Bosses Spawn?
 False
-#Can metals spawn here?
-False
-#Can water plants spawn here?
-True
-#Can Bushes spawn here?
-False
 #Unique resource
 True
 sand
+	

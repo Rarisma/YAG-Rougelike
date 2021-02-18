@@ -1,11 +1,9 @@
 #prefix - no mewtwo here
 outside of a,camping near a,listening to echoes coming from a,staring into,reading the runes from a wall inside of a,
+#ResourceIDs to load
+-1,0,4,5,6,
 #Depth limit
 20
-#Can metals spawn here?
-True
-#Can gems spawn here?
-True
 #Unique resource - Seriously stop looking.
 True
 Strange orb

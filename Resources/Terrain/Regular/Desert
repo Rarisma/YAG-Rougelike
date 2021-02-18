@@ -1,18 +1,12 @@
 #prefix
 surrounded by a,being suffocated by the surrounding,Feeling hopeless in a,seeing mirages in a,feeling thirsty in a,hoping to find the end of the,
-#Can this place have trees?
-False
+#ResourceIDs
+-1,
 #Can Hostiles spawn?
 False
 #Can passive creatures spawn?
 False
 #Can Bosses Spawn?
-False
-#Can metals spawn here?
-False
-#Can water plants spawn here?
-False
-#Can Bushes spawn here?
 False
 #Unique resource
 True

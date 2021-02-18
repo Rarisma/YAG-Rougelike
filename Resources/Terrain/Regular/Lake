@@ -1,19 +1,13 @@
 #prefix
 overlooking a,at a,somewhere close to a,now at a,standing at a,overlooking a,looking towards,observing the fish in the,
-#Can this place have trees?
-True
+#ResourceIDs
+-1,0,1,2,5,
 #Can Hostiles spawn?
 True
 #Can passive creatures spawn?
 True
 #Can Bosses Spawn?
 False
-#Can metals spawn here?
-False
-#Can water plants spawn here?
-True
-#Can Bushes spawn here?
-True
 #Unique resource (Flayn)
 True
 Fish

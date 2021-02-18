@@ -1,11 +1,9 @@
 #prefix
 almost enveloped by,feeling the overwhelming presence in the,wonder what is inside of the,
+#ResourceIDs to load
+-1,1,6,
 #max height
 1024
-#Can metals spawn here?
-True
-#Can gems spawn here?
-false
 #Unique resource
 true
 blue rose

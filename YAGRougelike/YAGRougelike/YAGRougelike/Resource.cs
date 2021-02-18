@@ -102,5 +102,25 @@ namespace YAGRougelike
             }
             return output;
         }
+
+        public static List<string> ResourceIDsLoader(string PathToResource) //Could be merged with TerrainPrefixLoader if a lines to skip was added or if sender is checked
+        {
+            string Prefixes = File.ReadLines(FileSystem.AppDataDirectory + PathToResource).Skip(3).Take(1).First();
+            List<string> output = new List<string>();
+            string temp = "";
+            for (int i = 0; i < Prefixes.Length; i++)
+            {
+                if (Prefixes[i] == System.Convert.ToChar(","))
+                {
+                    output.Add(temp);
+                    temp = "";
+                }
+                else
+                {
+                    temp = temp + Prefixes[i];
+                }
+            }
+            return output;
+        }
     }
 }
