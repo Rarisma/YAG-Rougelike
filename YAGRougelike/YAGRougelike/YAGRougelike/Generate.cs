@@ -31,7 +31,6 @@ namespace YAGRougelike
             {
                 string[] output = { "0", Convert.ToString(Resource.RegularLocations[rnd.Next(0, Resource.RegularLocations.Count)]), "" };
                 Prefixes.AddRange(Resource.TerrainPrefixLoader("//Data//Resources//Terrain//Regular//" + output[1]));
-                int test = Prefixes.Count();
                 output[2] = " " + Prefixes[rnd.Next(0, Prefixes.Count())];
                 return output;
             }
@@ -139,7 +138,6 @@ namespace YAGRougelike
             goes to the corresponding if, then it picks a random item
             in the corresponding list.*/
 
-            //TODO?: Update terrain preferences to include all resource types
             string[] output = { "", "", "" };
             List<string[]> EnabledResources = new List<string[]>();
             List<string> TerrainSettings = new List<string>();
@@ -152,19 +150,10 @@ namespace YAGRougelike
             return output;
         }
 
-        public static string[] CreatureGenerate()
-        {
-            Random rnd = new Random();
-            string[] output = { "", "", "-1", "true" };
-            output[0] = "0";
-            output[1] = Resource.PassiveCreatures[rnd.Next(0, Resource.PassiveCreatures.Count())].ToLower();
-            return output;
-        }
-
-        public static string[] HostileGenerate()
+        public static List<object> HostileGenerate()
         {
             /* Enemy Generation guide
-            Suffix - 33% chance
+            Suffix - 10% chance
             Prefix - 20% Chance
 
             The value of Suffix and Prefix decider are added to output[2]
@@ -172,12 +161,43 @@ namespace YAGRougelike
 
             TODO - Re add suffixes
              */
-            Random rnd = new Random();
-            string[] output = { "", "enemytext", "1", "" };
-            output[0] = "1";
 
-            output[1] = output[1].ToLower();
-            return output;
+            //This loads the base enemy data into the list
+            Random rnd = new Random();
+            List<object> Output = new List<object>(); // this stores names and numbers
+            Output.Add(Resource.Enemies[rnd.Next(0, Resource.Enemies.Count())]); //Gets a random enemy
+            Output.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Enemy//" + Output[0]));
+
+            //This cleans the list
+            Output.RemoveAt(9);
+            Output.RemoveAt(7);
+            Output.RemoveAt(5);
+            Output.RemoveAt(3);
+            Output.RemoveAt(1);
+
+            if (rnd.Next(1, 5) == 3) //20% Chance of loading a prefix
+            {//could be made into a for loop at some point and possibly put into a function
+                string Prefix = Resource.EnemyPrefix[rnd.Next(0, Resource.EnemyPrefix.Count())]; //This used for loading
+                Output[0] = "Prefix" + Prefix + Output[0];
+                Output[1] = Convert.ToInt32(Output[1]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(1).Take(1).First());
+                Output[2] = Convert.ToInt32(Output[2]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(2).Take(1).First());
+                Output[3] = Convert.ToInt32(Output[3]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(5).Take(1).First());
+                Output[4] = Convert.ToInt32(Output[3]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(7).Take(1).First());
+                Output[5] = Convert.ToInt32(Output[3]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(9).Take(1).First());
+            }
+
+            if (rnd.Next(0, 9) == 3) //10% Chance of loading a prefix
+            {//could be made into a for loop at some point and possibly put into a function
+                string Suffix = Resource.EnemySuffix[rnd.Next(0, Resource.EnemySuffix.Count())]; //This used for loading
+                Output[0] = Output[0] + "Suffix" + Suffix;
+                Output[1] = Convert.ToInt32(Output[1]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(1).Take(1).First());
+                Output[2] = Convert.ToInt32(Output[2]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(2).Take(1).First());
+                Output[3] = Convert.ToInt32(Output[3]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(5).Take(1).First());
+                Output[4] = Convert.ToInt32(Output[3]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(7).Take(1).First());
+                Output[5] = Convert.ToInt32(Output[3]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(9).Take(1).First());
+            }
+
+            return Output;
         }
     }
 }

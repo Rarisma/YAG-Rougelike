@@ -17,28 +17,21 @@ namespace YAGRougelike //Get F.lux!
 
         private async void Play(object sender, EventArgs e)
         {
-            try// These seem to fail on UWP (Win10/Xbox)
+            await Permissions.CheckStatusAsync<Permissions.StorageRead>();
+            await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
+            PlayButton.Text = "Checking for update"; //Makes sure the user doesn't think the app is frozen
+            await Task.Delay(1000); //Delays to allow the UI button to update
+
+            string UpdateStatus = "Somthing has gone seriously wrong if you are seeing this";
+            if (Resource.AreResourcesUpToDate() == false) //this attempts to update and gets the result
             {
-                await Permissions.CheckStatusAsync<Permissions.StorageRead>();
-                await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
+                UpdateStatus = Resource.ResourceUpdate();
+                PlayButton.Text = "Updating..."; //Makes sure the user doesn't think the app is frozen
+                await Task.Delay(1000);
             }
-            catch { await Task.Delay(0); }
 
-            PlayButton.Text = "Attempting to update...";
-            await Task.Delay(1); //Delays task to make sure the play button updates
-            using (var client = new WebClient()) { client.DownloadFile("https://github.com/Rarisma/YAG-Rougelike/raw/main/Resources/Resources.zip", FileSystem.AppDataDirectory + "//Resouces.zip"); }
-
-            try { Directory.Delete(FileSystem.AppDataDirectory + "//Data//Resources//", true); } //Deletes Resources folder and any subfolders
-            catch { await Task.Delay(1); } // Does nothing, just prevents crash
-
-            try { ZipFile.ExtractToDirectory(FileSystem.AppDataDirectory + "//Resouces.zip", FileSystem.AppDataDirectory + "//Data//Resources//"); }
-            catch { await Task.Delay(1); }
-
-            await Navigation.PushModalAsync(new Overworld());
-            Buildstring.Text = Resource.ResourceIDsLoader("//Data//Resources//Terrain//Regular//Beach")[1];
-            //PlayButton.Text = "Update complete!";
-            await Task.Delay(1000);
-            PlayButton.Text = "Play";
+            if (UpdateStatus != "Success!") { await DisplayAlert("Error", "The following error occured:\n" + UpdateStatus + "\n\nYou may be able to continue however you might encounter crashes.\nIf this is your first time running the app then you will crash by pressing continue.", "Continue"); }
+            await Navigation.PushModalAsync(new Overworld()); //Either way the use will get sent here
         }
     }
 }

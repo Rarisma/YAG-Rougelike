@@ -34,7 +34,7 @@ namespace YAGRougelike
             string[] Terrain = Generate.Terrain();
             List<string[]> Resources = Display.Resources();
             string[] Creature = CreatureDisplay();
-            if (Creature[3] == "false")
+            if (Convert.ToString(Creature[3]) == "false")
             {
                 North.IsVisible = false;
                 West.IsVisible = false;
@@ -48,7 +48,12 @@ namespace YAGRougelike
                 East.IsVisible = true;
                 South.IsVisible = true;
             }
-            DisplayText.Text = "You are" + Terrain[2] + " " + Terrain[1] + "\n" + Resources[0][2] + Resources[1][2] + Resources[2][2] + Resources[3][2] + Creature[1];
+            DisplayText.Text = "You are" + Terrain[2] + " " + Terrain[1] + "\n" + Resources[0][2] + Resources[1][2] + Resources[2][2] + Resources[3][2];
+            if (Convert.ToString(Creature[0]) == "true")
+            {
+                DisplayText.Text += "\nThere is a " + Creature[2];
+            }
+
             Debug.Text = "Debug info\nLocation " + Terrain + "\nRes0: " + Resources[0][0] + " " + Resources[0][1] + " " + Resources[0][2] + "Res1: " + Resources[1][0] + " " + Resources[1][1] + " " + Resources[1][2] + "Res2: " + Resources[2][0] + " " + Resources[2][1] + " " + Resources[2][2] + "Res3: " + Resources[3][0] + " " + Resources[3][1] + " " + Resources[3][2];
             Coords.Text = "Coordinates:\nX: " + PlayerData.Coordinates[0] + "\nY: " + PlayerData.Coordinates[1];
         }
@@ -56,16 +61,36 @@ namespace YAGRougelike
         public static string[] CreatureDisplay()
         {
             Random rnd = new Random();
+            string[] output = { "true", "", "", "", "", "", "", "", "" };
+            /* 0 - Should anything be displayed (bool)
+             * 1 - is this hostile (bool)
+             * 2 - Enemy name
+             * 3 - Enemy attack
+             * 4 - Enemy Defence
+             * 5 - Enemy Evasion
+             * 6 - Enemy Magic
+             * 7 - Enemy Health */
+
             int Decider = rnd.Next(0, 9);
+            if (Decider < 2) { output[0] = "false"; } //20% chance of nothing spawning
+            else if (Decider > 2 && Decider < 8)   // 60% chance of enemy
+            {
+                List<object> temp = new List<object>();
+                temp.AddRange(Generate.HostileGenerate());
+                output[1] = "true";
+                output[2] = Convert.ToString(temp[0]);
 
-            string[] output = { "", "", "", "" };
-
-            if (Decider < 2) { output[0] = ""; }                                          // 30% for nothing
-            else if (Decider > 2 && Decider < 8) { output = Generate.HostileGenerate(); } // 40% Chance for an enemy
-            else if (Decider >= 8) { output = Generate.CreatureGenerate(); }              // 20% Chance for an animal
-
-            if (Decider > 2) { output[1] = "There is a " + output[1]; } //Adds text before is a creature is generated
-            if (Decider > 2 && Decider < 8 && rnd.Next(0, 2) == 1) { output[3] = "false"; }
+                output[3] = Convert.ToString(temp[1]);
+                output[4] = Convert.ToString(temp[2]);
+                output[5] = Convert.ToString(temp[3]);
+                output[6] = Convert.ToString(temp[4]);
+                output[7] = Convert.ToString(temp[5]);
+            }
+            else if (Decider >= 8)
+            {
+                output[0] = Resource.PassiveCreatures[rnd.Next(0, Resource.PassiveCreatures.Count)].ToLower();
+                output[1] = "false";
+            }
             return output;
         }
     }

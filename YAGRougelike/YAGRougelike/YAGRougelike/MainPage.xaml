@@ -7,7 +7,8 @@
         <StackLayout BackgroundColor="#121212">
             <BoxView Color="#121212" HeightRequest="100" />
             <Label Text="Rougealike" FontSize="50" TextColor="AliceBlue" FontAttributes="Bold" HorizontalOptions="Center" />
-            <Label x:Name="Buildstring" Text="Version 0.2.0 - The terrain update" FontSize="Small" TextColor="AliceBlue" HorizontalOptions="Center" />
+            <Label x:Name="Version" Text="Version 0.2.0" FontSize="Small" TextColor="AliceBlue" HorizontalOptions="Center" />
+            <Label Text="The terrain update" TextColor="White" HorizontalOptions="Center" />
             <BoxView Color="#121212" HeightRequest="100" />
 
             <Button x:Name="PlayButton" Text="Play" Margin="20" Clicked="Play" />

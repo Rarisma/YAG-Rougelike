@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using Xamarin.Essentials;
 
@@ -9,6 +10,11 @@ namespace YAGRougelike
 {
     public class Resource
     {
+        //Revisions are changes to generation changes that are hard coded however versions are just updates the might add new items/resources that don't need hardcoded changes
+        public static int ResourceRevision = 0; //This helps the app understand if the resources are the latest version
+
+        public static int ResourceVersion;
+
         public static List<string> RegularLocations = new List<string>();
         public static List<string> WoodTypes = new List<string>();
         public static List<string> CaveLocations = new List<string>();
@@ -97,7 +103,7 @@ namespace YAGRougelike
                 }
                 else
                 {
-                    temp = temp + Prefixes[i];
+                    temp += Prefixes[i];
                 }
             }
             return output;
@@ -117,10 +123,41 @@ namespace YAGRougelike
                 }
                 else
                 {
-                    temp = temp + Prefixes[i];
+                    temp += Prefixes[i];
                 }
             }
             return output;
+        }
+
+        public static bool AreResourcesUpToDate()
+        {
+            //Step 1 Check if revision is the latest
+            int CurrentResourceVersion;
+            try { CurrentResourceVersion = Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Metadata//").Skip(6).Take(1).First()); }
+            catch { CurrentResourceVersion = -1; } //If this fails for any reason (Eg first run) just assume that //resources// doesnt exist
+
+            //This downloads and saves the update metadata file for comparsion
+            using (var client = new System.Net.WebClient()) { client.DownloadFile("https://github.com/Rarisma/YAG-Rougelike/raw/main/Resources/Metadata", FileSystem.AppDataDirectory + "//UpdateMetadata"); }
+            int UpdateVersion = Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//UpdateMetadata").Skip(6).Take(1).First());
+
+            return CurrentResourceVersion == UpdateVersion;
+        }
+
+        public static string ResourceUpdate()
+        {
+            try // This will download the resources.zip
+            {
+                using (var client = new System.Net.WebClient()) { client.DownloadFile("https://github.com/Rarisma/YAG-Rougelike/raw/main/Resources/Resources.zip", FileSystem.AppDataDirectory + "//Resouces.zip"); }
+            }
+            catch { return "Error Code 1\nFailed to download resources?\nAre you connected to the internet and can you access github?"; } //This should only happen if the user cannot access github
+
+            try { Directory.Delete(FileSystem.AppDataDirectory + "//Data//Resources//", true); } //Deletes Resources folder and any subfolders
+            catch { } // This will fail if resources has never been downloaded before so it does nothing
+
+            try { ZipFile.ExtractToDirectory(FileSystem.AppDataDirectory + "//Resouces.zip", FileSystem.AppDataDirectory + "//Data//Resources//"); }
+            catch { return "Error Code 2\nFailed to extract resources?\nIs the zip corrupted\n\nYou should check your connection, try again and if this persists contact the developers.\n\nYou are likely to crash if you press continue."; }
+
+            return "Success!";
         }
     }
 }
