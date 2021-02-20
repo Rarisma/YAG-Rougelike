@@ -29,6 +29,7 @@ namespace YAGRougelike //Get F.lux!
                 PlayButton.Text = "Updating..."; //Makes sure the user doesn't think the app is frozen
                 await Task.Delay(1000);
             }
+            else { UpdateStatus = "Success!"; }
 
             if (UpdateStatus != "Success!") { await DisplayAlert("Error", "The following error occured:\n" + UpdateStatus + "\n\nYou may be able to continue however you might encounter crashes.\nIf this is your first time running the app then you will crash by pressing continue.", "Continue"); }
             await Navigation.PushModalAsync(new Overworld()); //Either way the use will get sent here

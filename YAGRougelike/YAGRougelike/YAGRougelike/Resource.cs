@@ -28,6 +28,8 @@ namespace YAGRougelike
         public static List<string> TreeResources = new List<string>();
         public static List<string> RareTreeResources = new List<string>();
 
+        public static List<string> MetalResources = new List<string>();
+
         public static List<string> PassiveCreatures = new List<string>();
         public static List<string> EnemyPrefix = new List<string>();
         public static List<string> Enemies = new List<string>();
@@ -52,10 +54,11 @@ namespace YAGRougelike
             Enemies.Clear();
             EnemySuffix.Clear();
             ForrestPrefixes.Clear();
+            MetalResources.Clear();
         }
 
         public static void ReloadResources() //Calling this function will reload all resources
-        {
+        { //Update to use LibRarisma.CSVToList
             Resource.RegularLocations.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Terrain//Regular//"));
             Resource.CaveLocations.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Terrain//Caves//"));
             Resource.WoodTypes.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Flora/Normal Trees"));
@@ -74,6 +77,7 @@ namespace YAGRougelike
             Resource.EnemyPrefix.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Creatures//Hostile//Prefix"));
             Resource.Enemies.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Creatures//Hostile//Enemy"));
             Resource.EnemySuffix.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Creatures//Hostile//Suffix"));
+            Resource.MetalResources.AddRange(Resource.FileBasedResourceLoader("//Data//Resources//Items//Metals//"));
         }
 
         public static List<string> FileBasedResourceLoader(string PathToDirectoryToLoadFrom)
