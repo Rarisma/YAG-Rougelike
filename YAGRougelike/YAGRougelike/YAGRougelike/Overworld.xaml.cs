@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace YAGRougelike
 {
@@ -14,6 +15,7 @@ namespace YAGRougelike
             Resource.ClearResources();
             Resource.ReloadResources();
             PlayerData.Reset();
+            North.ImageSource = FileSystem.AppDataDirectory + "\\test.png";
             WorldGen();
         }
 
@@ -32,8 +34,9 @@ namespace YAGRougelike
         public void WorldGen()
         {
             string[] Terrain = Generate.Terrain();
-            List<string[]> Resources = Display.Resources("//Data//Resources//Terrain//" + Terrain[0] + "//" + Terrain[1]);
-            for (int i = 0; i < Resources.Count; i++) { if (Resources[i][2] == "There is a \n") { Resources[i][2] = ""; } } //prevents There is a from showing up in frount
+            List<string[]> Resources = Display.Resources("//Data//Resources//Terrain//" + Terrain[0] + "//" + Terrain[1], Terrain[2]);
+            for (int i = 0; i < Resources.Count; i++) { if (Resources[i][3].Length <= 25 && Resources[i][3].Length >= 5) { Resources[i][3] = ""; } } //prevents There is a from showing up in frount
+
             string[] Creature = CreatureDisplay();
             if (Convert.ToString(Creature[3]) == "false")
             {
@@ -49,13 +52,11 @@ namespace YAGRougelike
                 East.IsVisible = true;
                 South.IsVisible = true;
             }
-            DisplayText.Text = "You are" + Terrain[2] + " " + Terrain[1] + "\n" + Resources[0][2] + Resources[1][2] + Resources[2][2] + Resources[3][2];
-            if (Convert.ToString(Creature[0]) == "true")
-            {
-                DisplayText.Text += Creature[2];
-            }
+            DisplayText.Text = "You are" + Terrain[2] + " " + Terrain[1] + Resources[0][3] + Resources[1][3] + Resources[2][3] + Resources[3][3];
+            if (Convert.ToString(Creature[0]) == "true") { DisplayText.Text += Creature[2]; } //This only displays creatures if its enabled
 
-            Debug.Text = "Debug info\nLocation " + Terrain + "\nRes0: " + Resources[0][0] + " " + Resources[0][1] + " " + Resources[0][2] + "Res1: " + Resources[1][0] + " " + Resources[1][1] + " " + Resources[1][2] + "Res2: " + Resources[2][0] + " " + Resources[2][1] + " " + Resources[2][2] + "Res3: " + Resources[3][0] + " " + Resources[3][1] + " " + Resources[3][2];
+            for (int i = 0; i < Resources.Count; i++) { if (Resources[i][3].Length <= 25 && Resources[i][3].Length >= 5) { Resources[i][2] += " <---This line got Vectored!"; } } //prevents There is a from showing up in frount
+            Debug.Text = "Debug info\nLocation " + Terrain + "\nRes0: " + Resources[0][0] + " " + Resources[0][1] + " " + Resources[0][2] + "\nRes1: " + Resources[1][0] + " " + Resources[1][1] + " " + Resources[1][2] + "\nRes2: " + Resources[2][0] + " " + Resources[2][1] + " " + Resources[2][2] + "\nRes3: " + Resources[3][0] + " " + Resources[3][1] + " " + Resources[3][2];
             Coords.Text = "Coordinates:\nX: " + PlayerData.Coordinates[0] + "\nY: " + PlayerData.Coordinates[1];
         }
 

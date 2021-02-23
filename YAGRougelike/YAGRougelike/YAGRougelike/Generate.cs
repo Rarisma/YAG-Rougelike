@@ -36,8 +36,8 @@ namespace YAGRougelike
             }
             else if (TerrainDecider <= 28 && TerrainDecider > 20)
             {
-                string ForrestWoodtype = Resource.WoodTypes[rnd.Next(0, Resource.WoodTypes.Count())];
-                string[] output = { "Forests", Convert.ToString(Resource.ForrestPrefixes[rnd.Next(0, Resource.ForrestPrefixes.Count())] + " " + ForrestWoodtype + " forrest."), "" };
+                string ForestWoodtype = Resource.WoodTypes[rnd.Next(0, Resource.WoodTypes.Count())];
+                string[] output = { "Forests", Convert.ToString(Resource.ForrestPrefixes[rnd.Next(0, Resource.ForrestPrefixes.Count())] + " " + ForestWoodtype + " forrest."), ForestWoodtype };
                 return output;
             }
             else if (TerrainDecider <= 32 && TerrainDecider > 28)
@@ -80,7 +80,7 @@ namespace YAGRougelike
             goes to the corresponding if, then it picks a random item
             in the corresponding list.*/
 
-            string[] output = { "", "", "" };
+            string[] output = { "", "", "", "" }; //0 - Ammount   1 - Prefix   2 - Name   3 - Unused here but prevents display() crashes if not
             List<string> TempEnabledResources = new List<string>(); //used to get the output of LibRarisma.CSVToListFromFile
             List<int> EnabledResources = new List<int>();           //This is used to store the converted output of TempEnabledResources
             List<int[]> AllowedResources = new List<int[]>();       //This is used to decide the resource to call
@@ -108,13 +108,62 @@ namespace YAGRougelike
             for (int i = 0; ResourceCounter < ResourceChooser; i++) { ResourceCounter += AllowedResources[i][1]; SelectedID = AllowedResources[i][0]; }
 
             //This part takes the decided type and gets a random item from said type
-            if (SelectedID == 0) { output[2] = Resource.BushResources[rnd.Next(0, Resource.BushResources.Count)]; }
-            if (SelectedID == 1) { output[2] = Resource.FloorPlantResources[rnd.Next(0, Resource.FloorPlantResources.Count)]; }
-            if (SelectedID == 2) { output[2] = Resource.WaterPlantResources[rnd.Next(0, Resource.WaterPlantResources.Count)]; }
-            if (SelectedID == 3) { output[2] = "ripe " + Resource.FruitResources[rnd.Next(0, Resource.FruitResources.Count)] + " tree"; }
-            if (SelectedID == 4) { output[2] = Resource.WoodTypes[rnd.Next(0, Resource.WoodTypes.Count)] + " tree"; }
-            if (SelectedID == 5) { output[2] = "rare " + Resource.RareTreeResources[rnd.Next(0, Resource.RareTreeResources.Count)] + " tree here"; }
-            if (SelectedID == 6) { output[2] = "cluster of " + Resource.MetalResources[rnd.Next(0, Resource.MetalResources.Count)] + " ore"; }
+
+            if (SelectedID == -1 && Resource.DisableCustomResources == true) // -1 is strange as its defined by one of the last lines in a terrain file but differing terrains have different properties so this scans the file and finds it
+            {
+                List<string> TerrainFile = new List<string>();
+                TerrainFile.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "//" + PathToTerrain));
+                output[2] = TerrainFile[TerrainFile.Count() - 1];
+                Resource.DisableCustomResources = true;
+            }
+
+            if (SelectedID == 0)
+            {
+                int ResID = rnd.Next(0, Resource.BushResources.Count);
+                output[2] = Resource.BushResources[ResID];
+                Resource.BushResources.RemoveAt(ResID);
+            }
+            if (SelectedID == 1)
+            {
+                int ResID = rnd.Next(0, Resource.FloorPlantResources.Count);
+                output[2] = Resource.FloorPlantResources[ResID];
+                Resource.FloorPlantResources.RemoveAt(ResID);
+            }
+            if (SelectedID == 2)
+            {
+                int ResID = rnd.Next(0, Resource.WaterPlantResources.Count);
+                output[2] = Resource.WaterPlantResources[ResID];
+                Resource.WaterPlantResources.RemoveAt(ResID);
+            }
+            if (SelectedID == 3)
+            {
+                int ResID = rnd.Next(0, Resource.FruitResources.Count);
+                output[2] = "ripe " + Resource.FruitResources[ResID] + " trees";
+                Resource.FruitResources.RemoveAt(ResID);
+            }
+            if (SelectedID == 4)
+            {
+                int ResID = rnd.Next(0, Resource.WoodTypes.Count);
+                output[2] = Resource.WoodTypes[ResID] + " trees";
+                Resource.WoodTypes.RemoveAt(ResID);
+            }
+            if (SelectedID == 5)
+            {
+                int ResID = rnd.Next(0, Resource.RareTreeResources.Count);
+                output[2] = "rare " + Resource.RareTreeResources[ResID] + " trees here";
+                Resource.RareTreeResources.RemoveAt(ResID);
+            }
+            if (SelectedID == 6)
+            {
+                int ResID = rnd.Next(0, Resource.MetalResources.Count);
+                output[2] = "clusters of " + Resource.MetalResources[ResID] + " ore";
+                Resource.MetalResources.RemoveAt(ResID);
+            }
+
+            //This handles the ammount of resources generated and the prefix for it
+            string[] TempResourceAmmounts = { " are a few ", " are some ", " are lots of ", " are tons of " };
+            output[0] = Convert.ToString(rnd.Next(0, 10));
+            output[1] = TempResourceAmmounts[Convert.ToInt32(output[0]) / 4];
 
             return output;
         }

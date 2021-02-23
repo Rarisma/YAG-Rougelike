@@ -35,6 +35,7 @@ namespace YAGRougelike
         public static List<string> Enemies = new List<string>();
         public static List<string> EnemySuffix = new List<string>();
         public static List<string> ForrestPrefixes = new List<string>();
+        public static bool DisableCustomResources = false;
 
         public static void ClearResources() //Should be called before using ReloadResources()
         {
@@ -55,6 +56,7 @@ namespace YAGRougelike
             EnemySuffix.Clear();
             ForrestPrefixes.Clear();
             MetalResources.Clear();
+            DisableCustomResources = false;
         }
 
         public static void ReloadResources() //Calling this function will reload all resources
