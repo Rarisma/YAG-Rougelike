@@ -5,7 +5,7 @@ using System.IO;
 using Xamarin.Essentials;
 
 namespace YAGRougelike
-{
+{ //Imagine having two functioning joycons, could not be me
     public class Generate
     {
         public static string[] Terrain()
@@ -29,28 +29,28 @@ namespace YAGRougelike
             List<String> Prefixes = new List<String>();
             if (TerrainDecider <= 20)
             {
-                string[] output = { "Regular", Convert.ToString(Resource.RegularLocations[rnd.Next(0, Resource.RegularLocations.Count)]), "" };
-                Prefixes.AddRange(Resource.TerrainPrefixLoader("//Data//Resources//Terrain//Regular//" + output[1]));
+                string[] output = { "Regular", Convert.ToString(GameData.RegularLocations[rnd.Next(0, GameData.RegularLocations.Count)]), "" };
+                Prefixes.AddRange(GameData.TerrainPrefixLoader("//Data//Resources//Terrain//Regular//" + output[1]));
                 output[2] = " " + Prefixes[rnd.Next(0, Prefixes.Count())];
                 return output;
             }
             else if (TerrainDecider <= 28 && TerrainDecider > 20)
             {
-                string ForestWoodtype = Resource.WoodTypes[rnd.Next(0, Resource.WoodTypes.Count())];
-                string[] output = { "Forests", Convert.ToString(Resource.ForrestPrefixes[rnd.Next(0, Resource.ForrestPrefixes.Count())] + " " + ForestWoodtype + " forrest."), ForestWoodtype };
+                string ForestWoodtype = GameData.WoodTypes[rnd.Next(0, GameData.WoodTypes.Count())];
+                string[] output = { "Forests", Convert.ToString(GameData.ForrestPrefixes[rnd.Next(0, GameData.ForrestPrefixes.Count())] + " " + ForestWoodtype + " forrest."), ForestWoodtype };
                 return output;
             }
             else if (TerrainDecider <= 32 && TerrainDecider > 28)
             {
-                string[] output = { "Caves", Convert.ToString(Resource.CaveLocations[rnd.Next(0, Resource.CaveLocations.Count)]), "" };
-                Prefixes.AddRange(Resource.TerrainPrefixLoader("//Data//Resources//Terrain//Caves//" + output[1]));
+                string[] output = { "Caves", Convert.ToString(GameData.CaveLocations[rnd.Next(0, GameData.CaveLocations.Count)]), "" };
+                Prefixes.AddRange(GameData.TerrainPrefixLoader("//Data//Resources//Terrain//Caves//" + output[1]));
                 output[2] = " " + Prefixes[rnd.Next(0, Prefixes.Count() - 1)];
                 return output;
             }
             else if (TerrainDecider <= 35 && TerrainDecider > 32)
             {
-                string[] output = { "Mountains", Convert.ToString(Resource.MountainLocations[rnd.Next(0, Resource.MountainLocations.Count)]), "" };
-                Prefixes.AddRange(Resource.TerrainPrefixLoader("//Data//Resources//Terrain//Mountains//" + output[1]));
+                string[] output = { "Mountains", Convert.ToString(GameData.MountainLocations[rnd.Next(0, GameData.MountainLocations.Count)]), "" };
+                Prefixes.AddRange(GameData.TerrainPrefixLoader("//Data//Resources//Terrain//Mountains//" + output[1]));
                 output[2] = " " + Prefixes[rnd.Next(0, Prefixes.Count() - 1)];
                 return output;
             }
@@ -58,7 +58,7 @@ namespace YAGRougelike
             return fixer; //shouldn't be run but visual studio keeps annoying me
         }
 
-        public static string[] ResouceGenerate(string PathToTerrain)
+        private static string[] ResouceGenerate(string PathToTerrain)
         {
             //Writing this gave me a PHD in for loops
             /* Heres how the resource gen works
@@ -89,13 +89,13 @@ namespace YAGRougelike
 
             //Possibly add feature to decide weighting per terrain
             if (EnabledResources.Contains(-1) == true) { AllowedResources.Add(new[] { -1, 25 }); }
-            if (EnabledResources.Contains(0) == true) { AllowedResources.Add(new[] { 0, 5 }); }
-            if (EnabledResources.Contains(1) == true) { AllowedResources.Add(new[] { 1, 5 }); }
-            if (EnabledResources.Contains(2) == true) { AllowedResources.Add(new[] { 2, 10 }); }
-            if (EnabledResources.Contains(3) == true) { AllowedResources.Add(new[] { 3, 5 }); }
-            if (EnabledResources.Contains(4) == true) { AllowedResources.Add(new[] { 4, 12 }); }
+            if (EnabledResources.Contains(0) == true) { AllowedResources.Add(new[] { 0, 10 }); }
+            if (EnabledResources.Contains(1) == true) { AllowedResources.Add(new[] { 1, 25 }); }
+            if (EnabledResources.Contains(2) == true) { AllowedResources.Add(new[] { 2, 5 }); }
+            if (EnabledResources.Contains(3) == true) { AllowedResources.Add(new[] { 3, 4 }); }
+            if (EnabledResources.Contains(4) == true) { AllowedResources.Add(new[] { 4, 5 }); }
             if (EnabledResources.Contains(5) == true) { AllowedResources.Add(new[] { 5, 1 }); }
-            if (EnabledResources.Contains(6) == true) { AllowedResources.Add(new[] { 6, 15 }); }
+            if (EnabledResources.Contains(6) == true) { AllowedResources.Add(new[] { 6, 5 }); }
 
             int TotalSum = 0;
             for (int i = 0; i < EnabledResources.Count(); i++) { TotalSum += AllowedResources[i][1]; } //This loop adds the second number in each array from the list EnabledResources
@@ -109,55 +109,55 @@ namespace YAGRougelike
 
             //This part takes the decided type and gets a random item from said type
 
-            if (SelectedID == -1 && Resource.DisableCustomResources == true) // -1 is strange as its defined by one of the last lines in a terrain file but differing terrains have different properties so this scans the file and finds it
+            if (SelectedID == -1 && GameData.DisableCustomResources == true) // -1 is strange as its defined by one of the last lines in a terrain file but differing terrains have different properties so this scans the file and finds it
             {
                 List<string> TerrainFile = new List<string>();
                 TerrainFile.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "//" + PathToTerrain));
                 output[2] = TerrainFile[TerrainFile.Count() - 1];
-                Resource.DisableCustomResources = true;
+                GameData.DisableCustomResources = true;
             }
 
             if (SelectedID == 0)
             {
-                int ResID = rnd.Next(0, Resource.BushResources.Count);
-                output[2] = Resource.BushResources[ResID];
-                Resource.BushResources.RemoveAt(ResID);
+                int ResID = rnd.Next(0, GameData.BushResources.Count);
+                output[2] = GameData.BushResources[ResID];
+                GameData.BushResources.RemoveAt(ResID);
             }
             if (SelectedID == 1)
             {
-                int ResID = rnd.Next(0, Resource.FloorPlantResources.Count);
-                output[2] = Resource.FloorPlantResources[ResID];
-                Resource.FloorPlantResources.RemoveAt(ResID);
+                int ResID = rnd.Next(0, GameData.FloorPlantResources.Count);
+                output[2] = GameData.FloorPlantResources[ResID];
+                GameData.FloorPlantResources.RemoveAt(ResID);
             }
             if (SelectedID == 2)
             {
-                int ResID = rnd.Next(0, Resource.WaterPlantResources.Count);
-                output[2] = Resource.WaterPlantResources[ResID];
-                Resource.WaterPlantResources.RemoveAt(ResID);
+                int ResID = rnd.Next(0, GameData.WaterPlantResources.Count);
+                output[2] = GameData.WaterPlantResources[ResID];
+                GameData.WaterPlantResources.RemoveAt(ResID);
             }
             if (SelectedID == 3)
             {
-                int ResID = rnd.Next(0, Resource.FruitResources.Count);
-                output[2] = "ripe " + Resource.FruitResources[ResID] + " trees";
-                Resource.FruitResources.RemoveAt(ResID);
+                int ResID = rnd.Next(0, GameData.FruitResources.Count);
+                output[2] = "ripe " + GameData.FruitResources[ResID] + " trees";
+                GameData.FruitResources.RemoveAt(ResID);
             }
             if (SelectedID == 4)
             {
-                int ResID = rnd.Next(0, Resource.WoodTypes.Count);
-                output[2] = Resource.WoodTypes[ResID] + " trees";
-                Resource.WoodTypes.RemoveAt(ResID);
+                int ResID = rnd.Next(0, GameData.WoodTypes.Count);
+                output[2] = GameData.WoodTypes[ResID] + " trees";
+                GameData.WoodTypes.RemoveAt(ResID);
             }
             if (SelectedID == 5)
             {
-                int ResID = rnd.Next(0, Resource.RareTreeResources.Count);
-                output[2] = "rare " + Resource.RareTreeResources[ResID] + " trees here";
-                Resource.RareTreeResources.RemoveAt(ResID);
+                int ResID = rnd.Next(0, GameData.RareTreeResources.Count);
+                output[2] = "rare " + GameData.RareTreeResources[ResID] + " trees here";
+                GameData.RareTreeResources.RemoveAt(ResID);
             }
             if (SelectedID == 6)
             {
-                int ResID = rnd.Next(0, Resource.MetalResources.Count);
-                output[2] = "clusters of " + Resource.MetalResources[ResID] + " ore";
-                Resource.MetalResources.RemoveAt(ResID);
+                int ResID = rnd.Next(0, GameData.MetalResources.Count);
+                output[2] = "clusters of " + GameData.MetalResources[ResID] + " ore";
+                GameData.MetalResources.RemoveAt(ResID);
             }
 
             //This handles the ammount of resources generated and the prefix for it
@@ -182,8 +182,10 @@ namespace YAGRougelike
 
             //This loads the base enemy data into the list
             Random rnd = new Random();
-            List<object> Output = new List<object>(); // this stores names and numbers
-            Output.Add(Resource.Enemies[rnd.Next(0, Resource.Enemies.Count())]); //Gets a random enemy
+            List<object> Output = new List<object>
+            {
+                GameData.Enemies[rnd.Next(0, GameData.Enemies.Count())] //Gets a random enemy
+            }; // this stores names and numbers
             Output.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Enemy//" + Output[0]));
 
             //This cleans the list
@@ -195,7 +197,7 @@ namespace YAGRougelike
 
             if (rnd.Next(1, 3) == 2) //50% Chance of loading a prefix
             {//could be made into a for loop at some point and possibly put into a function
-                string Prefix = Resource.EnemyPrefix[rnd.Next(0, Resource.EnemyPrefix.Count())]; //This used for loading
+                string Prefix = GameData.EnemyPrefix[rnd.Next(0, GameData.EnemyPrefix.Count())]; //This used for loading
                 Output[0] = Prefix + " " + Output[0];
                 Output[1] = Convert.ToInt32(Output[1]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(1).Take(1).First());
                 Output[2] = Convert.ToInt32(Output[2]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(3).Take(1).First());
@@ -206,7 +208,7 @@ namespace YAGRougelike
 
             if (rnd.Next(0, 5) == 3) //10% Chance of loading a prefix
             {//could be made into a for loop at some point and possibly put into a function
-                string Suffix = Resource.EnemySuffix[rnd.Next(0, Resource.EnemySuffix.Count())]; //This used for loading
+                string Suffix = GameData.EnemySuffix[rnd.Next(0, GameData.EnemySuffix.Count())]; //This used for loading
                 Output[0] = Output[0] + " " + Suffix;
                 Output[1] = Convert.ToInt32(Output[1]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(1).Take(1).First());
                 Output[2] = Convert.ToInt32(Output[2]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(3).Take(1).First());
@@ -216,6 +218,37 @@ namespace YAGRougelike
             }
 
             return Output;
+        }
+
+        public static List<string[]> Resources(string TerrainPath, string ForestType = null)
+        {
+            List<string[]> output = new List<string[]>();
+            string[] Resource0 = { "", "", "", "" };
+            string[] Resource1 = { "", "", "", "" };
+            string[] Resource2 = { "", "", "", "" };
+            string[] Resource3 = { "", "", "", "" };
+
+            if (TerrainPath.ToLower().Contains("forests") || TerrainPath.Contains("forrests")) //Forrests don't follow to normal terrain gen rules and will simply generate 4 of the same tree
+            {
+                Resource0[3] = "\nThere is a ton of " + ForestType + " trees";
+            }
+            else
+            {
+                Random rnd = new Random();
+                int Decider = rnd.Next(10, 10);
+                if (Decider >= 0) { Resource0 = Generate.ResouceGenerate(TerrainPath); Resource0[3] = "\nThere" + Resource0[1] + Resource0[2]; } // 90% chance for 1 resource
+                if (Decider >= 5) { Resource1 = Generate.ResouceGenerate(TerrainPath); Resource1[3] = "\nThere" + Resource1[1] + Resource1[2]; } // 50% chance for 2 Resource
+                if (Decider >= 7) { Resource2 = Generate.ResouceGenerate(TerrainPath); Resource2[3] = "\nThere" + Resource2[1] + Resource2[2]; } // 30% chance for 3 Resource
+                if (Decider >= 9) { Resource3 = Generate.ResouceGenerate(TerrainPath); Resource3[3] = "\nThere" + Resource3[1] + Resource3[2]; } // 10% chance for 4 resouces
+            }
+
+            output.Add(Resource0);
+            output.Add(Resource1);
+            output.Add(Resource2);
+            output.Add(Resource3);
+            GameData.ReloadResources();
+
+            return output;
         }
     }
 }

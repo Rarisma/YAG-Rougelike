@@ -12,9 +12,9 @@ namespace YAGRougelike
         public Overworld()
         {
             InitializeComponent();
-            Resource.ClearResources();
-            Resource.ReloadResources();
-            PlayerData.Reset();
+            GameData.ClearResources();
+            GameData.ReloadResources();
+            GameData.PlayerDataReset();
             North.ImageSource = FileSystem.AppDataDirectory + "\\test.png";
             WorldGen();
         }
@@ -24,17 +24,17 @@ namespace YAGRougelike
             Button button = sender as Button;
             string ButtonText = Convert.ToString(button.Text.Replace("Move ", ""));
 
-            if (ButtonText == "North") { PlayerData.Coordinates[1] += 1; }
-            if (ButtonText == "South") { PlayerData.Coordinates[1] -= 1; }
-            if (ButtonText == "East") { PlayerData.Coordinates[0] += 1; }
-            if (ButtonText == "West") { PlayerData.Coordinates[0] -= 1; }
+            if (ButtonText == "North") { GameData.PlayerDataCoordinates[1] += 1; }
+            if (ButtonText == "South") { GameData.PlayerDataCoordinates[1] -= 1; }
+            if (ButtonText == "East") { GameData.PlayerDataCoordinates[0] += 1; }
+            if (ButtonText == "West") { GameData.PlayerDataCoordinates[0] -= 1; }
             WorldGen();
         }
 
         public void WorldGen()
         {
             string[] Terrain = Generate.Terrain();
-            List<string[]> Resources = Display.Resources("//Data//Resources//Terrain//" + Terrain[0] + "//" + Terrain[1], Terrain[2]);
+            List<string[]> Resources = Generate.Resources("//Data//Resources//Terrain//" + Terrain[0] + "//" + Terrain[1], Terrain[2]);
             for (int i = 0; i < Resources.Count; i++) { if (Resources[i][3].Length <= 25 && Resources[i][3].Length >= 5) { Resources[i][3] = ""; } } //prevents There is a from showing up in frount
 
             string[] Creature = CreatureDisplay();
@@ -55,9 +55,9 @@ namespace YAGRougelike
             DisplayText.Text = "You are" + Terrain[2] + " " + Terrain[1] + Resources[0][3] + Resources[1][3] + Resources[2][3] + Resources[3][3];
             if (Convert.ToString(Creature[0]) == "true") { DisplayText.Text += Creature[2]; } //This only displays creatures if its enabled
 
-            for (int i = 0; i < Resources.Count; i++) { if (Resources[i][3].Length <= 25 && Resources[i][3].Length >= 5) { Resources[i][2] += " <---This line got Vectored!"; } } //prevents There is a from showing up in frount
-            Debug.Text = "Debug info\nLocation " + Terrain + "\nRes0: " + Resources[0][0] + " " + Resources[0][1] + " " + Resources[0][2] + "\nRes1: " + Resources[1][0] + " " + Resources[1][1] + " " + Resources[1][2] + "\nRes2: " + Resources[2][0] + " " + Resources[2][1] + " " + Resources[2][2] + "\nRes3: " + Resources[3][0] + " " + Resources[3][1] + " " + Resources[3][2];
-            Coords.Text = "Coordinates:\nX: " + PlayerData.Coordinates[0] + "\nY: " + PlayerData.Coordinates[1];
+            //for (int i = 0; i < Resources.Count; i++) { if (Resources[i][3].Length <= 25 && Resources[i][3].Length >= 5) { Resources[i][2] += " <---This line got Vectored!"; } } //prevents There is a from showing up in frount
+            //DisplayText.Text += "\nDebug info\nRes0: " + Resources[0][0] + " " + Resources[0][1] + " " + Resources[0][2] + "\nRes1: " + Resources[1][0] + " " + Resources[1][1] + " " + Resources[1][2] + "\nRes2: " + Resources[2][0] + " " + Resources[2][1] + " " + Resources[2][2] + "\nRes3: " + Resources[3][0] + " " + Resources[3][1] + " " + Resources[3][2];
+            Coords.Text = "Coordinates: (" + GameData.PlayerDataCoordinates[0] + "," + GameData.PlayerDataCoordinates[1] + ")";
         }
 
         public static string[] CreatureDisplay()
@@ -90,10 +90,14 @@ namespace YAGRougelike
             }
             else if (Decider >= 8)
             {
-                output[0] = "\nThere is a " + Resource.PassiveCreatures[rnd.Next(0, Resource.PassiveCreatures.Count)].ToLower();
+                output[0] = "\nThere is a " + GameData.PassiveCreatures[rnd.Next(0, GameData.PassiveCreatures.Count)].ToLower();
                 output[1] = "false";
             }
             return output;
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
         }
     }
 }

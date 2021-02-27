@@ -5,47 +5,61 @@
     <ContentPage.Content>
         <Grid BackgroundColor="#121212">
             <Grid.RowDefinitions>
-                <RowDefinition Height="100" />
+                <!-- Row 0  is for padding and is unused (mostly for UWP Debuging)-->
+                <RowDefinition Height="20" />
+                <RowDefinition Height="65" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="300
+                               " />
                 <RowDefinition Height="200" />
-                <RowDefinition Height="100" />
                 <RowDefinition Height="200" />
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
+            <!-- This grid shows the coordinates and XP bar-->
+            <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20" />
-                    <RowDefinition Height="15" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="15 " />
+                    <RowDefinition Height="10" />
                 </Grid.RowDefinitions>
-
-                <Label x:Name="Coords" Text="Coordinates:&#x0d;&#x0a;X:????&#x0d;&#x0a;Y:????" Grid.RowSpan="3" TextColor="White" />
-                <Label x:Name="XPInfo" Text="Level 0 (0/1000)" HorizontalOptions="Center" FontSize="Small" TextColor="White" />
-                <ProgressBar x:Name="XPBar" Grid.Row="1" ProgressColor="LightSeaGreen" HorizontalOptions="Center" WidthRequest="250" />
+                <Label x:Name="Coords" Text="Coordinates: XCoords,YCOORD" TextColor="White" Grid.Row="0" HorizontalOptions="Center" />
+                <Label Text="XP (XP to next level)" Grid.Row="1" TextColor="White" HorizontalOptions="Center" />
+                <ProgressBar x:Name="XPBar" ProgressColor="LightSeaGreen" HorizontalOptions="Center" WidthRequest="250" Progress="1" Grid.Row="2" />
             </Grid>
 
-            <Label x:Name="DisplayText" Text="DisplayText" TextColor="White" Grid.Row="1" FontSize="20" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
-            <Label x:Name="Debug" Text="DEBUG" TextColor="White" Grid.Row="2" FontSize="15" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+            <!--This controls the world shown to the user (possibly picture to a user)-->
+            <Label x:Name="DisplayText" Text="Location&#10;Res0&#10;Res1&#10;Res2&#10;Res3&#10;EnemyText" TextColor="White" Grid.Row="3" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" />
 
-            <!-- This grid controls the positioning and height of the movement buttons-->
-            <Grid Grid.Row="3" HorizontalOptions="Center">
+            <!--This controls the main buttons that are not releated to movements-->
+            <Grid Grid.Row="4" HorizontalOptions="Center">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
                     <RowDefinition Height="50" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="120" />
-                    <ColumnDefinition Width="125" />
-                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Inventory" Grid.Row="1" Grid.Column="1"  HorizontalOptions="Center" />
+                <Button Text="Battle" WidthRequest="110" Grid.Row="1" HorizontalOptions="Center" />
+            </Grid>
+
+            <Grid Grid.Row="5" HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <!-- Row 0  is for padding and shouldn't be used-->
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400" />
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="North"  Text="Move North"  Grid.Row="1"  Grid.Column="1"  HorizontalOptions="Center"   Clicked="Move" />
-                <Button x:Name="West"   Text="Move West"   Grid.Row="3"  Grid.Column="0"  HorizontalOptions="Start"    Clicked="Move" />
-                <Button x:Name="Battle" Text="Battle"      Grid.Row="3"  Grid.Column="1"  HorizontalOptions="Center"   Clicked="Move" />
-                <Button x:Name="East"   Text="Move East"   Grid.Row="3"  Grid.Column="2"  HorizontalOptions="End"      Clicked="Move" />
-                <Button x:Name="South"  Text="Move South"  Grid.Row="5"  Grid.Column="1"  HorizontalOptions="Center"   Clicked="Move" />
+                <Button Text="Move North" Grid.Row="0" HorizontalOptions="Center" x:Name="North" Clicked="Move"/>
+                <Button Text="Move West"  Grid.Row="1" HorizontalOptions="Start"  x:Name="West"  Clicked="Move"/>
+                <Button Text="Move East"  Grid.Row="1" HorizontalOptions="End"    x:Name="East"  Clicked="Move"/>
+                <Button Text="Move South" Grid.Row="2" HorizontalOptions="Center" x:Name="South" Clicked="Move"/>
             </Grid>
         </Grid>
     </ContentPage.Content>
