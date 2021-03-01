@@ -1,0 +1,8 @@
+#Small  Ammount Prefix (Less than 50% of max)
+There are some,There are a few,There are a couple,
+#Medium Ammount Prefix (Less than 75% of max)
+There are quite a few bundles of,There is a patch of harvestable,
+#Large  Ammount Prefix (Above 75% of max)
+There is a large patch of,There is a large bag of,There are many bundles of,
+#Maximum ammount
+5

@@ -1,0 +1,8 @@
+#Small  Ammount Prefix (Less than 50% of max)
+There is a bag of,There are a couple of,There is a small ammount of,There is are some,
+#Medium Ammount Prefix (Less than 75% of max)
+There is a bundle of,There is a bag of,
+#Large  Ammount Prefix (Above 75% of max)
+There is a large patch of,There is a ton of,There are many bundles of,
+#Maximum ammount
+10

@@ -1,0 +1,8 @@
+#Small  Ammount Prefix (Less than 50% of max)
+There are a few shards of,There are a couple shards of,There is some,
+#Medium Ammount Prefix (Less than 75% of max)
+There are quite a few shards of,There is a lot of,
+#Large  Ammount Prefix (Above 75% of max)
+There is a high ammount of,There is a ton of,There are many fragments of,
+#Maximum ammount
+10

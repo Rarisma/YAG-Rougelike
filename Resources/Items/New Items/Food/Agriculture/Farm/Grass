@@ -1,0 +1,8 @@
+#Small  Ammount Prefix (Less than 50% of max)
+There is a patch of,There are a couple of patches of,There is some,
+#Medium Ammount Prefix (Less than 75% of max)
+There are quite a few patches of,There is a patch of green,There is a patch of dried,
+#Large  Ammount Prefix (Above 75% of max)
+There is a large area of,There is a ton of,There is a large patch of,
+#Maximum ammount
+10

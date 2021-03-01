@@ -37,6 +37,8 @@ namespace YAGRougelike
         public static bool DisableCustomResources = false;
 
         public static Int32[] PlayerDataCoordinates = { 0, 0 };
+        public static List<string> PlayerInventory = new List<string>();
+        public static List<Int64> PlayerInventoryAmmount = new List<Int64>();
 
 
         public static void ClearResources() //Should be called before using ReloadResources()

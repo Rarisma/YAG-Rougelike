@@ -7,6 +7,11 @@ using Xamarin.Essentials;
 namespace YAGRougelike
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+    public static class WorldData
+    {
+        public static List<string[]> WorldResources = new List<string[]>();
+    }
+
     public partial class Overworld : ContentPage
     {
         public Overworld()
@@ -15,7 +20,6 @@ namespace YAGRougelike
             GameData.ClearResources();
             GameData.ReloadResources();
             GameData.PlayerDataReset();
-            North.ImageSource = FileSystem.AppDataDirectory + "\\test.png";
             WorldGen();
         }
 
@@ -33,9 +37,10 @@ namespace YAGRougelike
 
         public void WorldGen()
         {
+            WorldData.WorldResources.Clear();
             string[] Terrain = Generate.Terrain();
-            List<string[]> Resources = Generate.Resources("//Data//Resources//Terrain//" + Terrain[0] + "//" + Terrain[1], Terrain[2]);
-            for (int i = 0; i < Resources.Count; i++) { if (Resources[i][3].Length <= 25 && Resources[i][3].Length >= 5) { Resources[i][3] = ""; } } //prevents There is a from showing up in frount
+            WorldData.WorldResources.AddRange(Generate.Resources("//Data//Resources//Terrain//" + Terrain[0] + "//" + Terrain[1], Terrain[2]));
+            for (int i = 0; i < Resources.Count; i++) { if (WorldData.WorldResources[i][3].Length <= 25 && WorldData.WorldResources[i][3].Length >= 5) { WorldData.WorldResources[i][3] = ""; } } //prevents There is a from showing up in frount
 
             string[] Creature = CreatureDisplay();
             if (Convert.ToString(Creature[3]) == "false")
@@ -52,7 +57,9 @@ namespace YAGRougelike
                 East.IsVisible = true;
                 South.IsVisible = true;
             }
-            DisplayText.Text = "You are" + Terrain[2] + " " + Terrain[1] + Resources[0][3] + Resources[1][3] + Resources[2][3] + Resources[3][3];
+            if (Terrain[0] == "Forests") { DisplayText.Text = "You are " + Terrain[1]; }
+            else { DisplayText.Text = "You are" + Terrain[2] + " " + Terrain[1]; }
+            DisplayText.Text = DisplayText.Text + WorldData.WorldResources[0][3] + WorldData.WorldResources[1][3] + WorldData.WorldResources[2][3] + WorldData.WorldResources[3][3];
             if (Convert.ToString(Creature[0]) == "true") { DisplayText.Text += Creature[2]; } //This only displays creatures if its enabled
 
             //for (int i = 0; i < Resources.Count; i++) { if (Resources[i][3].Length <= 25 && Resources[i][3].Length >= 5) { Resources[i][2] += " <---This line got Vectored!"; } } //prevents There is a from showing up in frount
@@ -96,8 +103,34 @@ namespace YAGRougelike
             return output;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void CollectItems(object sender, EventArgs e)
         {
+            try
+            {
+                for (int i = 0; i <= 3; i++)
+                {
+                    if (GameData.PlayerInventory.Contains(WorldData.WorldResources[i][2]))
+                    {
+                        GameData.PlayerInventoryAmmount[GameData.PlayerInventory.IndexOf(WorldData.WorldResources[i][2])] = GameData.PlayerInventoryAmmount[GameData.PlayerInventory.IndexOf(WorldData.WorldResources[i][2])] + Convert.ToInt64(WorldData.WorldResources[i][0]);
+                    }
+                    else { GameData.PlayerInventory.Add(WorldData.WorldResources[i][2]); GameData.PlayerInventoryAmmount.Add(Convert.ToInt64(WorldData.WorldResources[i][0])); }
+                }
+            }
+            catch
+            {
+                int a = 0;
+            }
+            WorldGen();
+        }
+
+        private void Inventory(object sender, EventArgs e)
+        {
+            string output = "";
+            for (int i = 0; i < GameData.PlayerInventory.Count - 1; i++)
+            {
+                output += "\n" + GameData.PlayerInventory[i] + " - " + GameData.PlayerInventoryAmmount[i];
+            }
+            DisplayAlert("Current Inventory", output, "ok");
         }
     }
 }
