@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using System.Threading;
 
 namespace YAGRougelike
 {
@@ -118,7 +119,6 @@ namespace YAGRougelike
             }
             catch
             {
-                int a = 0;
             }
             WorldGen();
         }

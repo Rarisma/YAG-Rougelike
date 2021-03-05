@@ -1,0 +1,8 @@
+#Small  Ammount Prefix (Less than 50% of max)
+There is a small patch of a,There is a pile of a,There is a bit of a,
+#Medium Ammount Prefix (Less than 75% of max)
+There is quite a,There is a large patch of,
+#Large  Ammount Prefix (Above 75% of max)
+There is a huge,There is a ton of small,There are many many patches of,There is almost layer of,
+#Maximum ammount
+100

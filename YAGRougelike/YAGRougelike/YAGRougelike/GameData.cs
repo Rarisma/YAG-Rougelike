@@ -5,122 +5,63 @@ using System.IO.Compression;
 using System.Linq;
 using Xamarin.Essentials;
 
-//You can lean to leviate with a little help.
+//1.5 to stay alive.
 namespace YAGRougelike
 {
     public class GameData
     {
         //Revisions are changes to generation changes that are hard coded however versions are just updates the might add new items/resources that don't need hardcoded changes
-        public static int ResourceRevision = 0; //This helps the app understand if the resources are the latest version
-        public static int ResourceVersion;
+        public static int[] ResourceRevision = { 1, 0 }; //This helps the app understand if the resources are the latest version
 
-        public static List<string> RegularLocations = new List<string>();
-        public static List<string> WoodTypes = new List<string>();
-        public static List<string> CaveLocations = new List<string>();
-        public static List<string> MountainLocations = new List<string>();
-
-        public static List<string> BushResources = new List<string>();
-        public static List<string> FloorPlantResources = new List<string>();
-        public static List<string> WaterPlantResources = new List<string>();
-
-        public static List<string> FruitResources = new List<string>();
-        public static List<string> TreeResources = new List<string>();
-        public static List<string> RareTreeResources = new List<string>();
-
-        public static List<string> MetalResources = new List<string>();
-
+        public static List<List<string>> Terrain = new List<List<string>>();    // 0 - Regular      1 - Forrest     2 - Caves       3 - Mountains
+        public static List<List<string>> Enemy = new List<List<string>>();    // 0 - Prefix       1 - Name        2 - Suffix
+        public static List<List<string>> Resources = new List<List<string>>();  // 0 - Random       1 - Shards      2 - Crystals    3 - Farm        4 - Fruit       5 - Waterplants     6 - Trees       7 - Rare Trees      8 - Metal
         public static List<string> PassiveCreatures = new List<string>();
-        public static List<string> EnemyPrefix = new List<string>();
-        public static List<string> Enemies = new List<string>();
-        public static List<string> EnemySuffix = new List<string>();
-        public static List<string> ForrestPrefixes = new List<string>();
+
         public static bool DisableCustomResources = false;
 
         public static Int32[] PlayerDataCoordinates = { 0, 0 };
         public static List<string> PlayerInventory = new List<string>();
         public static List<Int64> PlayerInventoryAmmount = new List<Int64>();
 
-
         public static void ClearResources() //Should be called before using ReloadResources()
         {
-            RegularLocations.Clear();
-            WoodTypes.Clear();
-            CaveLocations.Clear();
-            MountainLocations.Clear();
-            BushResources.Clear();
-            FloorPlantResources.Clear();
-            WaterPlantResources.Clear();
-            FruitResources.Clear();
-            TreeResources.Clear();
-            TreeResources.Clear();
-            RareTreeResources.Clear();
+            Terrain.Clear();
+            Enemy.Clear();
+            Resources.Clear();
             PassiveCreatures.Clear();
-            EnemyPrefix.Clear();
-            Enemies.Clear();
-            EnemySuffix.Clear();
-            ForrestPrefixes.Clear();
-            MetalResources.Clear();
+            for (int a = 0; a < 10; a++)
+            {
+                GameData.Terrain.Add(new List<string> { });
+                GameData.Enemy.Add(new List<string> { });
+                GameData.Resources.Add(new List<string> { });
+            }
+
             DisableCustomResources = false;
         }
 
         public static void ReloadResources() //Calling this function will reload all resources
         { //Update to use LibRarisma.CSVToList
-            GameData.RegularLocations.AddRange(LibRarisma.ListFilesInDir("//Data//Resources//Terrain//Regular//"));
-            GameData.CaveLocations.AddRange(LibRarisma.ListFilesInDir("//Data//Resources//Terrain//Caves//"));
-            GameData.WoodTypes.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Flora/Normal Trees"));
-            GameData.MountainLocations.AddRange(LibRarisma.ListFilesInDir("//Data//Resources//Terrain//Mountains//"));
-            GameData.ForrestPrefixes.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Terrain/Forests"));
+            GameData.Terrain[0].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Terrain\\Regular\\"));
+            GameData.Terrain[1].AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "\\Data\\Resources\\Terrain\\Forests"));
+            GameData.Terrain[2].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Terrain\\Caves\\"));
+            GameData.Terrain[3].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Terrain\\Mountains\\"));
 
-            GameData.BushResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Flora/Bushes"));
-            GameData.FloorPlantResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Floor"));
-            GameData.WaterPlantResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Flora/Waterplants"));
+            Enemy[0].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Creatures\\Hostile\\Prefix\\"));
+            Enemy[1].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Creatures\\Hostile\\Enemy\\"));
+            Enemy[2].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Creatures\\Hostile\\Suffix"));
 
-            GameData.FruitResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Flora/Fruit"));
-            GameData.TreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Flora/Normal Trees"));
-            GameData.RareTreeResources.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Items/Flora/Rare Trees"));
+            Resources[0].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Items\\Random\\"));
+            Resources[1].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Items\\Shards\\"));
+            Resources[2].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Items\\Crystals\\"));
+            Resources[3].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Items\\Agriculture\\Farm\\"));
+            Resources[4].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Items\\Agriculture\\Fruit\\"));
+            Resources[5].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Items\\Agriculture\\Waterplants\\"));
+            Resources[6].AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "\\Data\\Resources\\Items\\Agriculture\\Normal Trees"));
+            Resources[7].AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "\\Data\\Resources\\Items\\Agriculture\\Rare Trees"));
+            Resources[8].AddRange(LibRarisma.ListFilesInDir(FileSystem.AppDataDirectory + "\\Data\\Resources\\Items\\Metals\\"));
 
-            GameData.PassiveCreatures.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "/Data/Resources/Creatures/Passive/Land"));
-            GameData.EnemyPrefix.AddRange(LibRarisma.ListFilesInDir("//Data//Resources//Creatures//Hostile//Prefix"));
-            GameData.Enemies.AddRange(LibRarisma.ListFilesInDir("//Data//Resources//Creatures//Hostile//Enemy"));
-            GameData.EnemySuffix.AddRange(LibRarisma.ListFilesInDir("//Data//Resources//Creatures//Hostile//Suffix"));
-            GameData.MetalResources.AddRange(LibRarisma.ListFilesInDir("//Data//Resources//Items//Metals//"));
-        }
-
-        public static List<string> TerrainPrefixLoader(string PathToResource)
-        {
-            string Prefixes = File.ReadLines(FileSystem.AppDataDirectory + PathToResource).Skip(1).Take(1).First();
-            List<string> output = new List<string>();
-            string temp = "";
-            for (int i = 0; i < Prefixes.Length; i++)
-            {
-                if (Prefixes[i] == System.Convert.ToChar(","))
-                {
-                    output.Add(temp);
-                    temp = "";
-                }
-                else
-                {
-                    temp += Prefixes[i];
-                }
-            }
-            return output;
-        }
-
-        public static List<string> ResourceIDsLoader(string PathToResource) //Could be merged with TerrainPrefixLoader if a lines to skip was added or if sender is checked
-        {
-            string Prefixes = File.ReadLines(FileSystem.AppDataDirectory + PathToResource).Skip(3).Take(1).First();
-            List<string> output = new List<string>();
-            string temp = "";
-            for (int i = 0; i < Prefixes.Length; i++)
-            {
-                if (Prefixes[i] == System.Convert.ToChar(","))
-                {
-                    output.Add(temp);
-                    temp = "";
-                }
-                else {temp += Prefixes[i];}
-            }
-            return output;
+            PassiveCreatures.AddRange(File.ReadAllLines("\\Data\\Resources\\Creatures\\Passive\\Land"));
         }
 
         public static bool AreResourcesUpToDate()
@@ -136,11 +77,13 @@ namespace YAGRougelike
 
             return CurrentResourceVersion == UpdateVersion;
         }
-    
+
         public static void PlayerDataReset()
         {
             PlayerDataCoordinates[0] = 0;
             PlayerDataCoordinates[1] = 0;
+            GameData.PlayerInventory.Clear();
+            GameData.PlayerInventoryAmmount.Clear();
         }
     }
 }

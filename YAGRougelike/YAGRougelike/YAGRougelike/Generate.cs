@@ -29,32 +29,31 @@ namespace YAGRougelike
             List<String> Prefixes = new List<String>();
             if (TerrainDecider <= 20)
             {
-                string[] output = { "Regular", Convert.ToString(GameData.RegularLocations[rnd.Next(0, GameData.RegularLocations.Count)]), "" };
-                Prefixes.AddRange(GameData.TerrainPrefixLoader("//Data//Resources//Terrain//Regular//" + output[1]));
+                string[] output = { "Regular", Convert.ToString(GameData.Terrain[0][rnd.Next(0, GameData.Terrain[0].Count)]), "" };
+                Prefixes.AddRange(LibRarisma.CSVToListFromFile("//Data//Resources//Terrain//Regular//" + output[1], 1));
                 output[2] = " " + Prefixes[rnd.Next(0, Prefixes.Count())];
                 return output;
             }
             else if (TerrainDecider <= 28 && TerrainDecider > 20)
             {
-                string ForestWoodtype = GameData.WoodTypes[rnd.Next(0, GameData.WoodTypes.Count())];
-                string[] output = { "Forests", Convert.ToString(GameData.ForrestPrefixes[rnd.Next(0, GameData.ForrestPrefixes.Count())] + " " + ForestWoodtype + " forrest."), ForestWoodtype };
+                string ForestWoodtype = GameData.Resources[6][rnd.Next(0, GameData.Resources[6].Count())];
+                string[] output = { "Forests", Convert.ToString(GameData.Terrain[1][rnd.Next(0, GameData.Terrain[1].Count())] + " " + ForestWoodtype + " forrest."), ForestWoodtype };
                 return output;
             }
             else if (TerrainDecider <= 32 && TerrainDecider > 28)
             {
-                string[] output = { "Caves", Convert.ToString(GameData.CaveLocations[rnd.Next(0, GameData.CaveLocations.Count)]), "" };
-                Prefixes.AddRange(GameData.TerrainPrefixLoader("//Data//Resources//Terrain//Caves//" + output[1]));
+                string[] output = { "Caves", Convert.ToString(GameData.Terrain[2][rnd.Next(0, GameData.Terrain[2].Count)]), "" };
+                Prefixes.AddRange(LibRarisma.CSVToListFromFile("//Data//Resources//Terrain//Caves//" + output[1], 1));
                 output[2] = " " + Prefixes[rnd.Next(0, Prefixes.Count() - 1)];
                 return output;
             }
             else if (TerrainDecider <= 35 && TerrainDecider > 32)
             {
-                string[] output = { "Mountains", Convert.ToString(GameData.MountainLocations[rnd.Next(0, GameData.MountainLocations.Count)]), "" };
-                Prefixes.AddRange(GameData.TerrainPrefixLoader("//Data//Resources//Terrain//Mountains//" + output[1]));
+                string[] output = { "Mountains", Convert.ToString(GameData.Terrain[3][rnd.Next(0, GameData.Terrain[3].Count)]), "" };
+                Prefixes.AddRange(LibRarisma.CSVToListFromFile("//Data//Resources//Terrain//Mountains//" + output[1], 1));
                 output[2] = " " + Prefixes[rnd.Next(0, Prefixes.Count() - 1)];
                 return output;
             }
-
             return fixer; //shouldn't be run but visual studio keeps annoying me
         }
 
@@ -116,48 +115,11 @@ namespace YAGRougelike
                 output[2] = TerrainFile[TerrainFile.Count() - 1];
                 GameData.DisableCustomResources = true;
             }
-
-            if (SelectedID == 0)
+            else
             {
-                int ResID = rnd.Next(0, GameData.BushResources.Count);
-                output[2] = GameData.BushResources[ResID];
-                GameData.BushResources.RemoveAt(ResID);
-            }
-            if (SelectedID == 1)
-            {
-                int ResID = rnd.Next(0, GameData.FloorPlantResources.Count);
-                output[2] = GameData.FloorPlantResources[ResID];
-                GameData.FloorPlantResources.RemoveAt(ResID);
-            }
-            if (SelectedID == 2)
-            {
-                int ResID = rnd.Next(0, GameData.WaterPlantResources.Count);
-                output[2] = GameData.WaterPlantResources[ResID];
-                GameData.WaterPlantResources.RemoveAt(ResID);
-            }
-            if (SelectedID == 3)
-            {
-                int ResID = rnd.Next(0, GameData.FruitResources.Count);
-                output[2] = "ripe " + GameData.FruitResources[ResID] + " trees";
-                GameData.FruitResources.RemoveAt(ResID);
-            }
-            if (SelectedID == 4)
-            {
-                int ResID = rnd.Next(0, GameData.WoodTypes.Count);
-                output[2] = GameData.WoodTypes[ResID] + " trees";
-                GameData.WoodTypes.RemoveAt(ResID);
-            }
-            if (SelectedID == 5)
-            {
-                int ResID = rnd.Next(0, GameData.RareTreeResources.Count);
-                output[2] = "rare " + GameData.RareTreeResources[ResID] + " trees here";
-                GameData.RareTreeResources.RemoveAt(ResID);
-            }
-            if (SelectedID == 6)
-            {
-                int ResID = rnd.Next(0, GameData.MetalResources.Count);
-                output[2] = "clusters of " + GameData.MetalResources[ResID] + " ore";
-                GameData.MetalResources.RemoveAt(ResID);
+                int ResID = rnd.Next(0, GameData.Resources[SelectedID].Count);
+                output[2] = GameData.Resources[SelectedID][ResID];
+                GameData.Resources[SelectedID].RemoveAt(ResID);
             }
 
             //This handles the ammount of resources generated and the prefix for it
@@ -184,7 +146,7 @@ namespace YAGRougelike
             Random rnd = new Random();
             List<object> Output = new List<object>
             {
-                GameData.Enemies[rnd.Next(0, GameData.Enemies.Count())] //Gets a random enemy
+                GameData.Enemy[1][rnd.Next(0, GameData.Enemy[1].Count())] //Gets a random enemy
             }; // this stores names and numbers
             Output.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Enemy//" + Output[0]));
 
@@ -197,7 +159,7 @@ namespace YAGRougelike
 
             if (rnd.Next(1, 3) == 2) //50% Chance of loading a prefix
             {//could be made into a for loop at some point and possibly put into a function
-                string Prefix = GameData.EnemyPrefix[rnd.Next(0, GameData.EnemyPrefix.Count())]; //This used for loading
+                string Prefix = GameData.Enemy[0][rnd.Next(0, GameData.Enemy[0].Count())]; //This used for loading
                 Output[0] = Prefix + " " + Output[0];
                 Output[1] = Convert.ToInt32(Output[1]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(1).Take(1).First());
                 Output[2] = Convert.ToInt32(Output[2]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(3).Take(1).First());
@@ -208,7 +170,7 @@ namespace YAGRougelike
 
             if (rnd.Next(0, 5) == 3) //10% Chance of loading a prefix
             {//could be made into a for loop at some point and possibly put into a function
-                string Suffix = GameData.EnemySuffix[rnd.Next(0, GameData.EnemySuffix.Count())]; //This used for loading
+                string Suffix = GameData.Enemy[2][rnd.Next(0, GameData.Enemy[2].Count())]; //This used for loading
                 Output[0] = Output[0] + " " + Suffix;
                 Output[1] = Convert.ToInt32(Output[1]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(1).Take(1).First());
                 Output[2] = Convert.ToInt32(Output[2]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(3).Take(1).First());
@@ -216,7 +178,6 @@ namespace YAGRougelike
                 Output[4] = Convert.ToInt32(Output[3]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(7).Take(1).First());
                 Output[5] = Convert.ToInt32(Output[3]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(9).Take(1).First());
             }
-
             return Output;
         }
 

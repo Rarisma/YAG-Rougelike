@@ -1,7 +1,6 @@
 ﻿//The maze of life is a banger of a tune
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using Xamarin.Essentials;
 using System.Linq;
