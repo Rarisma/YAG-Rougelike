@@ -1,0 +1,28 @@
+#Prefix
+Put prefixes here, separate them with a comma!
+
+#Resource ID's avaiable
+0,1,2,3,4,5,6,7
+
+#Custom Resource (Set to NULL to disable)
+NULL
+
+#Cimbable? (If enabled digable is not checked to prevent glitches)
+True/False
+
+#Digable?
+True/False
+
+#Height/Depth limit
+
+#Can passives spawn?
+True/False
+
+#Can hostiles spawn?
+True/False
+
+#Can bosses spawn?
+True/False
+
+#How many instances of this should be made (eg 1 means it has 1 chance, 10 means it is much more likely), should be less than 10 ideally
+1

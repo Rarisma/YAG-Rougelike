@@ -1,0 +1,29 @@
+#Prefix
+at the top of a,looking down into a,looking into a barren,near the bottom of a,you are looking into a deep,at the bottom of a,
+
+#Resource ID's avaiable
+0,6,1,2,
+
+#Custom Resource (Set to NULL to disable)
+unrefined gravel
+
+#Cimbable? (If enabled digable is not checked to prevent glitches)
+False
+
+#Digable?
+False
+
+#Height/Depth limit
+0
+
+#Can passives spawn?
+False
+
+#Can hostiles spawn?
+True
+
+#Can bosses spawn?
+True
+
+#Instances
+2

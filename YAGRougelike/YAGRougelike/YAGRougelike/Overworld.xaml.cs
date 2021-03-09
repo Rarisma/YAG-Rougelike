@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
-using System.Threading;
+
+//Rewrite me at some point
 
 namespace YAGRougelike
 {
@@ -40,7 +41,7 @@ namespace YAGRougelike
         {
             WorldData.WorldResources.Clear();
             string[] Terrain = Generate.Terrain();
-            WorldData.WorldResources.AddRange(Generate.Resources("//Data//Resources//Terrain//" + Terrain[0] + "//" + Terrain[1], Terrain[2]));
+            WorldData.WorldResources.AddRange(Generate.Resources(Terrain[4], Terrain[2]));
             for (int i = 0; i < Resources.Count; i++) { if (WorldData.WorldResources[i][3].Length <= 25 && WorldData.WorldResources[i][3].Length >= 5) { WorldData.WorldResources[i][3] = ""; } } //prevents There is a from showing up in frount
 
             string[] Creature = CreatureDisplay();
@@ -58,9 +59,8 @@ namespace YAGRougelike
                 East.IsVisible = true;
                 South.IsVisible = true;
             }
-            if (Terrain[0] == "Forests") { DisplayText.Text = "You are " + Terrain[1]; }
-            else { DisplayText.Text = "You are" + Terrain[2] + " " + Terrain[1]; }
-            DisplayText.Text = DisplayText.Text + WorldData.WorldResources[0][3] + WorldData.WorldResources[1][3] + WorldData.WorldResources[2][3] + WorldData.WorldResources[3][3];
+
+            DisplayText.Text = Terrain[3] + WorldData.WorldResources[0][3] + WorldData.WorldResources[1][3] + WorldData.WorldResources[2][3] + WorldData.WorldResources[3][3];
             if (Convert.ToString(Creature[0]) == "true") { DisplayText.Text += Creature[2]; } //This only displays creatures if its enabled
 
             //for (int i = 0; i < Resources.Count; i++) { if (Resources[i][3].Length <= 25 && Resources[i][3].Length >= 5) { Resources[i][2] += " <---This line got Vectored!"; } } //prevents There is a from showing up in frount
@@ -117,9 +117,8 @@ namespace YAGRougelike
                     else { GameData.PlayerInventory.Add(WorldData.WorldResources[i][2]); GameData.PlayerInventoryAmmount.Add(Convert.ToInt64(WorldData.WorldResources[i][0])); }
                 }
             }
-            catch
-            {
-            }
+            catch { }
+
             WorldGen();
         }
 

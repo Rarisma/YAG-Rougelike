@@ -1,0 +1,29 @@
+#Prefix
+staring down a,at the enterance of a,searching the entrance of a,sat near a,looking for ore in the,
+
+#Resource ID's avaiable
+0,1,2,6
+
+#Custom Resource (Set to NULL to disable)
+Prismatic Crystal
+
+#Cimbable? (If enabled digable is not checked to prevent glitches)
+False
+
+#Digable?
+True
+
+#Height/Depth limit
+200
+
+#Can passives spawn?
+True
+
+#Can hostiles spawn?
+True
+
+#Can bosses spawn?
+False
+
+#Instances
+2

@@ -1,4 +1,4 @@
-﻿//The maze of life is a banger of a tune
+﻿//I'm bad at friday night funkin
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -64,11 +64,28 @@ namespace YAGRougelike
         ///</summary>
         public static List<string> ListFilesInDir(string PathToDirectoryToLoadFrom)
         {
-            DirectoryInfo d = new DirectoryInfo(FileSystem.AppDataDirectory + PathToDirectoryToLoadFrom);
+            DirectoryInfo d = new DirectoryInfo(PathToDirectoryToLoadFrom);
             FileInfo[] Files = d.GetFiles();
             List<string> Resources = new List<string>();
             foreach (FileInfo file in Files) { Resources.Add(Convert.ToString(file.Name)); }
             return Resources;
+        }
+
+        /// <summary>
+        /// Gets a random number without having to declare a dedicated variable (32-Bit)
+        /// </summary>
+        /// <param name="Minimum"> test</param>
+        /// <param name="Maxiumum"></param>
+        /// <returns></returns>
+        public static Int32 RandomNumber(Int32 Minimum, Int32 Maxiumum)
+        {
+            Random randint = new Random();
+            return randint.Next(Minimum, Maxiumum);
+        }
+
+        public static string GiveItem(string[] List, int ItemToGive) //This allows one time use strings[] that might change at run time
+        {
+            return List[ItemToGive];
         }
     }
 }

@@ -3,75 +3,72 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using Xamarin.Essentials;
+using YAGRougelike.WorldGeneration.Terrain;
 
 namespace YAGRougelike
 { //Imagine having two functioning joycons, could not be me
     public class Generate
     {
         public static string[] Terrain()
-        {
-            /*Heres how the terrain gen works:
-             Random Number      Name            ID
-             00-20              Normal          0
-             21-28              Forrest         1
-             29-32              Cave            2
-             33-35              Mountain        3
-             ??-???             Unique           (Not implemented yet)
-             ID's are used to let the code understand what list is being picked from
+        {   //Check GameData.cs for terrain types
+            //The following lays out the ground work (Declaring variables ect)
+            string[] output = { "", "", "", "", "" };   //  0 - TerrainType, 1 - TerrainID, 2 - Prefix, 3 - Display ready,  4 - Path
+            int[] TerrainHelper = { 50, 70, 75, 80 };      // Helps terrain generation (Max numbers)
+            string[] PrefixLocations = { "//Data//Resources//Terrain//Regular//", "Forrest", "//Data//Resources//Terrain//Caves//", "//Data//Resources//Terrain//Mountains//" };
 
-             The code below basically gets a random number and then
-             goes to the corresponding if, then it picks a random item
-             in the corresponding list.*/
+            //The following decides the type and terrain
+            bool ForLoopFixer = false;
+            int test = LibRarisma.RandomNumber(0, TerrainHelper.Last());
+            for (int i = 0; ForLoopFixer == true; i++)
+            {
+                if (TerrainHelper[i] <= test)
+                {
+                    output[0] = Convert.ToString(i);
+                    ForLoopFixer = true;
+                }
+                else
+                {
+                    i++;
+                }
+            }
 
-            Random rnd = new Random();
-            int TerrainDecider = rnd.Next(0, 35);
-            string[] fixer = { "", "", "" };
-            List<String> Prefixes = new List<String>();
-            if (TerrainDecider <= 20)
+            output[1] = Convert.ToString(LibRarisma.RandomNumber(0, GameData.Terrain[Convert.ToInt32(output[0])].Count()));
+
+            //This decides the prefix
+            if (output[0] == "1") //For forests
             {
-                string[] output = { "Regular", Convert.ToString(GameData.Terrain[0][rnd.Next(0, GameData.Terrain[0].Count)]), "" };
-                Prefixes.AddRange(LibRarisma.CSVToListFromFile("//Data//Resources//Terrain//Regular//" + output[1], 1));
-                output[2] = " " + Prefixes[rnd.Next(0, Prefixes.Count())];
-                return output;
+                output[0] = "1"; //Forest terrain type
+                output[1] = GameData.Resources[6][LibRarisma.RandomNumber(0, GameData.Resources[6].Count())]; //This gets the type of wood as Terrain only stores the prefixes
+                output[2] = GameData.Terrain[1][LibRarisma.RandomNumber(0, GameData.Terrain[1].Count())];
+                output[3] = "You are " + output[2] + " " + output[1] + " forest.";
+                output[4] = "forests"; //This makes ResourceGenerate work correctly
+                GameData.Debugint[1]++;
             }
-            else if (TerrainDecider <= 28 && TerrainDecider > 20)
+            else
             {
-                string ForestWoodtype = GameData.Resources[6][rnd.Next(0, GameData.Resources[6].Count())];
-                string[] output = { "Forests", Convert.ToString(GameData.Terrain[1][rnd.Next(0, GameData.Terrain[1].Count())] + " " + ForestWoodtype + " forrest."), ForestWoodtype };
-                return output;
+                List<String> Prefixes = new List<String>();
+
+                Prefixes.AddRange(LibRarisma.CSVToListFromFile(Convert.ToString(FileSystem.AppDataDirectory + PrefixLocations[Convert.ToInt32(output[0])] + GameData.Terrain[Convert.ToInt32(output[0])][Convert.ToInt32(output[1])]), 1));
+                output[2] = Prefixes[LibRarisma.RandomNumber(0, Prefixes.Count)];
+
+                //This assembles everything for display
+                output[3] = "You are " + output[2] + " " + GameData.Terrain[Convert.ToInt32(output[0])][Convert.ToInt32(output[1])];
+                output[4] = FileSystem.AppDataDirectory + PrefixLocations[Convert.ToInt32(output[0])] + GameData.Terrain[Convert.ToInt32(output[0])][Convert.ToInt32(output[1])];
+                GameData.Debugint[0]++;
             }
-            else if (TerrainDecider <= 32 && TerrainDecider > 28)
-            {
-                string[] output = { "Caves", Convert.ToString(GameData.Terrain[2][rnd.Next(0, GameData.Terrain[2].Count)]), "" };
-                Prefixes.AddRange(LibRarisma.CSVToListFromFile("//Data//Resources//Terrain//Caves//" + output[1], 1));
-                output[2] = " " + Prefixes[rnd.Next(0, Prefixes.Count() - 1)];
-                return output;
-            }
-            else if (TerrainDecider <= 35 && TerrainDecider > 32)
-            {
-                string[] output = { "Mountains", Convert.ToString(GameData.Terrain[3][rnd.Next(0, GameData.Terrain[3].Count)]), "" };
-                Prefixes.AddRange(LibRarisma.CSVToListFromFile("//Data//Resources//Terrain//Mountains//" + output[1], 1));
-                output[2] = " " + Prefixes[rnd.Next(0, Prefixes.Count() - 1)];
-                return output;
-            }
-            return fixer; //shouldn't be run but visual studio keeps annoying me
+            output[3] += "\nNormal:" + GameData.Debugint[0] + "\nForest:" + GameData.Debugint[1];
+            return output;
         }
 
         private static string[] ResouceGenerate(string PathToTerrain)
         {
-            //Writing this gave me a PHD in for loops
-            /* Heres how the resource gen works
-            Random Value   Name               ID
+            /*Writing this gave me a PHD in for loops
+            See GameData.cs for resource IDs
 
-            Null      -    Load nothing      -2
-            Null      -    Custom Resource   -1
-            00-15     -    Bush               0
-            16-30     -    Floor plants       1
-            31-40     -    Waterplants        2
-            41-60     -    Fruit Trees        3
-            61-96     -    Regular Trees      4
-            96-100    -    Rare               5
-            96-100    -    Metal              6
+            Special resource IDs:
+            Name               ID
+            Load nothing      -2
+            Custom Resource   -1
 
             ID's are used to let the code understand what list is being picked from
 
@@ -83,7 +80,7 @@ namespace YAGRougelike
             List<string> TempEnabledResources = new List<string>(); //used to get the output of LibRarisma.CSVToListFromFile
             List<int> EnabledResources = new List<int>();           //This is used to store the converted output of TempEnabledResources
             List<int[]> AllowedResources = new List<int[]>();       //This is used to decide the resource to call
-            TempEnabledResources.AddRange(LibRarisma.CSVToListFromFile(FileSystem.AppDataDirectory + "//" + PathToTerrain, 3));
+            TempEnabledResources.AddRange(LibRarisma.CSVToListFromFile(PathToTerrain, 3));
             for (int i = 0; i < TempEnabledResources.Count; i++) { EnabledResources.Add(Convert.ToInt32(TempEnabledResources[i])); }
 
             //Possibly add feature to decide weighting per terrain
@@ -102,18 +99,21 @@ namespace YAGRougelike
             //This part actually decides the resource type
             Random rnd = new Random();
             int ResourceChooser = rnd.Next(0, TotalSum); //This gets a random number between the given weights the for loop below this will decide it
-            int SelectedID = 1911;
+            int SelectedID = 1;
             int ResourceCounter = 0;
             for (int i = 0; ResourceCounter < ResourceChooser; i++) { ResourceCounter += AllowedResources[i][1]; SelectedID = AllowedResources[i][0]; }
 
             //This part takes the decided type and gets a random item from said type
 
-            if (SelectedID == -1 && GameData.DisableCustomResources == true) // -1 is strange as its defined by one of the last lines in a terrain file but differing terrains have different properties so this scans the file and finds it
+            if (SelectedID == -1) // -1 is strange as its defined by one of the last lines in a terrain file but differing terrains have different properties so this scans the file and finds it
             {
-                List<string> TerrainFile = new List<string>();
-                TerrainFile.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "//" + PathToTerrain));
-                output[2] = TerrainFile[TerrainFile.Count() - 1];
-                GameData.DisableCustomResources = true;
+                if (GameData.DisableCustomResources == false)
+                {
+                    List<string> TerrainFile = new List<string>();
+                    TerrainFile.AddRange(File.ReadAllLines(PathToTerrain));
+                    output[2] = TerrainFile[TerrainFile.Count() - 1];
+                    GameData.DisableCustomResources = true;
+                }
             }
             else
             {
@@ -143,11 +143,10 @@ namespace YAGRougelike
              */
 
             //This loads the base enemy data into the list
-            Random rnd = new Random();
             List<object> Output = new List<object>
-            {
-                GameData.Enemy[1][rnd.Next(0, GameData.Enemy[1].Count())] //Gets a random enemy
-            }; // this stores names and numbers
+                    {
+                        GameData.Enemy[1][LibRarisma.RandomNumber(0, GameData.Enemy[1].Count())] //Gets a random enemy
+                    }; // this stores names and numbers
             Output.AddRange(File.ReadAllLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Enemy//" + Output[0]));
 
             //This cleans the list
@@ -157,9 +156,9 @@ namespace YAGRougelike
             Output.RemoveAt(3);
             Output.RemoveAt(1);
 
-            if (rnd.Next(1, 3) == 2) //50% Chance of loading a prefix
+            if (LibRarisma.RandomNumber(1, 3) == 2) //50% Chance of loading a prefix
             {//could be made into a for loop at some point and possibly put into a function
-                string Prefix = GameData.Enemy[0][rnd.Next(0, GameData.Enemy[0].Count())]; //This used for loading
+                string Prefix = GameData.Enemy[0][LibRarisma.RandomNumber(0, GameData.Enemy[0].Count())]; //This used for loading
                 Output[0] = Prefix + " " + Output[0];
                 Output[1] = Convert.ToInt32(Output[1]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(1).Take(1).First());
                 Output[2] = Convert.ToInt32(Output[2]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(3).Take(1).First());
@@ -168,9 +167,9 @@ namespace YAGRougelike
                 Output[5] = Convert.ToInt32(Output[3]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Prefix//" + Prefix).Skip(9).Take(1).First());
             }
 
-            if (rnd.Next(0, 5) == 3) //10% Chance of loading a prefix
+            if (LibRarisma.RandomNumber(0, 5) == 3) //10% Chance of loading a prefix
             {//could be made into a for loop at some point and possibly put into a function
-                string Suffix = GameData.Enemy[2][rnd.Next(0, GameData.Enemy[2].Count())]; //This used for loading
+                string Suffix = GameData.Enemy[2][LibRarisma.RandomNumber(0, GameData.Enemy[2].Count())]; //This used for loading
                 Output[0] = Output[0] + " " + Suffix;
                 Output[1] = Convert.ToInt32(Output[1]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(1).Take(1).First());
                 Output[2] = Convert.ToInt32(Output[2]) + Convert.ToInt32(File.ReadLines(FileSystem.AppDataDirectory + "//Data//Resources//Creatures//Hostile//Suffix//" + Suffix).Skip(3).Take(1).First());
