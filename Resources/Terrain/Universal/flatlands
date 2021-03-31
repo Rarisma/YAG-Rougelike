@@ -2,13 +2,13 @@
 in the,feeling bored in the,relaxing in the, sat down in the,observing the,hoping to find any signs of life in the,feeling sad in the,wondering how I came up with so many prefixes for the,watching the sunrise in the,watching the sunset in,sat in a tree looking down upon the,
 
 #Resource ID's avaiable
-0,1,2,3,4,5,6,7
+0,3,4,6
 
 #Custom Resource (Set to NULL to disable)
 NULL
 
 #Cimbable? (If enabled digable is not checked to prevent glitches)
-True/False
+False
 
 #Digable?
 False
@@ -17,13 +17,13 @@ False
 0
 
 #Can passives spawn?
-True/False
+True
 
 #Can hostiles spawn?
-True/False
+True
 
 #Can bosses spawn?
-True/False
+False
 
 #How many instances of this should be made (eg 1 means it has 1 chance, 10 means it is much more likely), should be less than 10 ideally
-1
+15
