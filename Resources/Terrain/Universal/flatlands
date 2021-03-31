@@ -11,9 +11,10 @@ NULL
 True/False
 
 #Digable?
-True/False
+False
 
 #Height/Depth limit
+0
 
 #Can passives spawn?
 True/False
