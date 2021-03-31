@@ -1,0 +1,29 @@
+#Prefix
+in a,lost in a,at the bottom of a,
+
+#Resource ID's avaiable
+0,1,2,3,4,6,7
+
+#Custom Resource (Set to NULL to disable)
+NULL
+
+#Cimbable? (If enabled digable is not checked to prevent glitches)
+False
+
+#Digable?
+False
+
+#Height/Depth limit
+Number here - Ignored if Climable and Digable are set to false
+
+#Can passives spawn?
+False
+
+#Can hostiles spawn?
+True
+
+#Can bosses spawn?
+False
+
+#How many instances of this should be made (eg 1 means it has 1 chance, 10 means it is much more likely), should be less than 10 ideally
+1
