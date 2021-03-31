@@ -1,0 +1,29 @@
+#Prefix
+surrounded by a,being suffocated by the surrounding,Feeling hopeless in a,seeing mirages in a,feeling thirsty in a,hoping to find the end of the,
+
+#Resource ID's avaiable
+0
+
+#Custom Resource (Set to NULL to disable)
+Dry sand
+
+#Cimbable? (If enabled digable is not checked to prevent glitches)
+False
+
+#Digable?
+False
+
+#Height/Depth limit
+0
+
+#Can passives spawn?
+False
+
+#Can hostiles spawn?
+False
+
+#Can bosses spawn?
+False
+
+#How many instances of this should be made (eg 1 means it has 1 chance, 10 means it is much more likely), should be less than 10 ideally
+1
