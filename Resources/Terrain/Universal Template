@@ -14,6 +14,7 @@ True/False
 True/False
 
 #Height/Depth limit
+Number here - Ignored if Climable and Digable are set to false
 
 #Can passives spawn?
 True/False
