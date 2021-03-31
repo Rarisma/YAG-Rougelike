@@ -1,0 +1,29 @@
+#Prefix
+in a,looking down at a,looking into a,Staring an endless,observing the creatures in the,looking at the shadowy figures in the,climbing into,
+
+#Resource ID's avaiable
+0,1,3,5,6
+
+#Custom Resource (Set to NULL to disable)
+Crystal of Maru
+
+#Cimbable? (If enabled digable is not checked to prevent glitches)
+False
+
+#Digable?
+False
+
+#Height/Depth limit
+0
+
+#Can passives spawn?
+True
+
+#Can hostiles spawn?
+True
+
+#Can bosses spawn?
+False
+
+#How many instances?
+1
