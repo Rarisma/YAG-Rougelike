@@ -1,0 +1,29 @@
+#Prefix
+at a,lost in,somehow at a,now at a,standing at a,overlooking a,sat on a,resting on a,laid on a,relaxing on a,sunbathing on a,looking towards,
+
+#Resource ID's avaiable
+2
+
+#Custom Resource (Set to NULL to disable)
+silky sand
+
+#Cimbable? (If enabled digable is not checked to prevent glitches)
+false
+
+#Digable?
+False
+
+#Height/Depth limit
+0
+
+#Can passives spawn?
+True
+
+#Can hostiles spawn?
+True
+
+#Can bosses spawn?
+False
+
+#How many instances of this should be made (eg 1 means it has 1 chance, 10 means it is much more likely), should be less than 10 ideally
+2
