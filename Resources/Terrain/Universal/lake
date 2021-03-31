@@ -1,0 +1,29 @@
+#Prefix
+overlooking a,at a,somewhere close to a,now at a,standing at a,overlooking a,looking towards,observing the fish in the,
+
+#Resource ID's avaiable
+0,2,4,6,7
+
+#Custom Resource (Set to NULL to disable)
+Piles o' fish
+
+#Cimbable? (If enabled digable is not checked to prevent glitches)
+False
+
+#Digable?
+False
+
+#Height/Depth limit
+Number here - Ignored if Climable and Digable are set to false
+
+#Can passives spawn?
+True
+
+#Can hostiles spawn?
+False
+
+#Can bosses spawn?
+True
+
+#How many instances of this should be made (eg 1 means it has 1 chance, 10 means it is much more likely), should be less than 10 ideally
+10
