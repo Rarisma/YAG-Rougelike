@@ -1,9 +1,0 @@
-#prefix
-staring down a,at the enterance of a,searching the entrance of a,sat near a,looking for ore in the,
-#ResourceIDs to load
--1,5,6,
-#Depth limit
-999
-#Unique resource
-true
-strange prism

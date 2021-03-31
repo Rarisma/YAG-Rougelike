@@ -1,9 +1,0 @@
-#prefix
-near a,inside of a,looking into an abandoned,
-#ResourceIDs to Load
--1,6,
-#Depth limit
-40
-#Unique resource
-True
-Crystal of Maru
