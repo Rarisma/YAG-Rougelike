@@ -26,4 +26,4 @@ False
 False
 
 #How many instances of this should be made (eg 1 means it has 1 chance, 10 means it is much more likely), should be less than 10 ideally
-1
+5
